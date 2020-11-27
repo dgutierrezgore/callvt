@@ -150,7 +150,9 @@
                                             </td>
                                             <td>{{ $listado->rutcliente }}</td>
                                             <td>{{ $listado->razonsoccliente }}</td>
-                                            <td></td>
+                                            <td>
+
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

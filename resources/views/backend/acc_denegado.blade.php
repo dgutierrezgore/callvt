@@ -1,15 +1,15 @@
-@extends('adminlte::layouts.app')
+@extends('adminlte::layouts.appfake')
 
 @section('htmlheader_title')
-    Carga de Documentos
+    Acceso Denegado
 @endsection
 
 @section('contentheader_title')
-    Documentación Interna
+    Acceso Denegado
 @endsection
 
 @section('contentheader_description')
-    - Formulario de Registro
+    - desde: IP: {{\Request::ip()}}
 @endsection
 
 @section('main-content')
@@ -24,9 +24,9 @@
                     <h3><i class="fa fa-warning text-red"></i> Oops! Usted no tiene acceso a este sistema.</h3>
 
                     <p>
-                        Por favor tome contacto con la Unidad Informática del Gobierno Regional.
+                        Por favor tome contacto con Soporte de VTCALL Sys.
                     </p>
-                    <p>Al teléfono 2405 782 ó al correo electrónico dgutierrez@gorebiobio.cl</p>
+                    <p>Al teléfono +56 9 6655 0512 ó al correo electrónico soporte@virtualcall.cl</p>
 
                 </div>
             </div>

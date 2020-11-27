@@ -48,13 +48,13 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">A. Paterno</label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control" min="0" id="user_paterno"
-                                               name="user_paterno" onkeyup="mayusculas_x(this)" required>
+                                               name="user_paterno" onkeyup="my_pat(this)" required>
                                     </div>
 
                                     <label for="inputEmail3" class="col-sm-1 control-label">A. Materno</label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control" min="0" id="user_materno"
-                                               name="user_materno" onkeyup="mayusculas_x(this)" required>
+                                               name="user_materno" onkeyup="my_mat(this)" required>
                                     </div>
                                 </div>
 
@@ -62,12 +62,13 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">Nombres</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" min="0" id="user_nombres"
-                                               name="user_nombres" onkeyup="mayusculas_x(this)" required>
+                                               name="user_nombres" onkeyup="my_nombres(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Nacionalidad</label>
                                     <div class="col-sm-2">
                                         <input type="text" class="form-control" min="0" id="user_nacionalidad"
-                                               name="user_nacionalidad" value="CHILENA" onkeyup="mayusculas_x(this)" required>
+                                               name="user_nacionalidad" value="CHILENA" onkeyup="mayusculas_x(this)"
+                                               required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Fec. Nacimiento</label>
                                     <div class="col-sm-2">
@@ -90,12 +91,12 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">Profesión</label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control" min="0" id="user_prof"
-                                               name="user_prof" onkeyup="mayusculas_x(this)" required>
+                                               name="user_prof" onkeyup="my_prof(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Oficio</label>
                                     <div class="col-sm-2">
                                         <input type="text" class="form-control" min="0" id="user_ofic"
-                                               name="user_ofic" onkeyup="mayusculas_x(this)" required>
+                                               name="user_ofic" onkeyup="my_ofic(this)" required>
                                     </div>
                                 </div>
                                 <hr>
@@ -103,7 +104,7 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">Calle</label>
                                     <div class="col-sm-4">
                                         <input type="text" class="form-control" min="0" id="user_calle"
-                                               name="user_calle" onkeyup="mayusculas_x(this)" required>
+                                               name="user_calle" onkeyup="my_calle(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Número</label>
                                     <div class="col-sm-2">
@@ -113,7 +114,7 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">Block/Casa</label>
                                     <div class="col-sm-2">
                                         <input type="text" class="form-control" min="0" id="user_block"
-                                               name="user_block" onkeyup="mayusculas_x(this)">
+                                               name="user_block" onkeyup="my_block(this)">
                                     </div>
                                 </div>
 
@@ -121,15 +122,15 @@
                                     <label for="inputEmail3" class="col-sm-1 control-label">Villa</label>
                                     <div class="col-sm-3">
                                         <input type="text" class="form-control" min="0" id="user_villa"
-                                               name="user_villa" onkeyup="mayusculas_x(this)" required>
+                                               name="user_villa" onkeyup="my_villa(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Comuna</label>
                                     <div class="col-sm-3">
                                         <select class="form-control" name="idcomuna">
                                             @foreach($regioncomuna as $listado)
                                                 <option
-                                                    value="{{$listado->idvtcall_comunas}}">{{ $listado->nombreregion }}
-                                                    - {{ $listado->nombrecomuna }}</option>
+                                                    value="{{$listado->idvtcall_comunas}}">{{ $listado->nombrecomuna }} - {{ $listado->nombreregion }}
+                                                    </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -138,18 +139,18 @@
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-1 control-label">Fono Fijo</label>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control" min="0" id="user_ffijo"
+                                        <input type="number" class="form-control" min="0" id="user_ffijo"
                                                name="user_ffijo" onkeyup="mayusculas_x(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Celular</label>
                                     <div class="col-sm-2">
-                                        <input type="text" class="form-control" min="0" id="user_cel"
+                                        <input type="number" class="form-control" min="0" id="user_cel"
                                                name="user_cel" onkeyup="mayusculas_x(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Mail Personal</label>
                                     <div class="col-sm-4">
                                         <input type="email" class="form-control" min="0" id="user_mailp"
-                                               name="user_mailp" onkeyup="mayusculas_x(this)" required>
+                                               name="user_mailp" onkeyup="my_mail(this)" required>
                                     </div>
                                 </div>
                             </div>
@@ -183,17 +184,49 @@
                                     <tbody>
                                     <tr>
                                         <th style="width: 10px">Acción</th>
+                                        <th>
+                                            <center>ID Usuario</center>
+                                        </th>
                                         <th>Rut Usuario</th>
                                         <th>Nombre Completo - Fono / Celular</th>
-                                        <th style="width: 40px">Avance</th>
+                                        <th style="width: 300px">Avance Inscripción</th>
+                                        <th style="width: 50px">%</th>
                                     </tr>
                                     @foreach($usuariospend as $listado)
                                         <tr>
-                                            <td>COMPLEMENTAR</td>
+                                            <td>
+                                                <form action="/ComplementarUsuario" method="POST">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="iduser"
+                                                           value="{{ $listado->idvtcallusers }}">
+                                                    <button class="btn btn-primary btn-xs" type="submit"><i
+                                                            class="fa fa-pencil"></i> COMPLEMENTAR
+                                                    </button>
+                                                </form>
+                                            </td>
+                                            <td>
+                                                <center>@if($listado->idusuario==null)
+                                                        <button class="btn btn-primary btn-xs"><i
+                                                                class="fa fa-key"></i> ID SIN ASIGNAR
+                                                        </button>
+                                                    @else
+                                                        <button class="btn btn-primary btn-xs"><i
+                                                                class="fa fa-key"></i> {{ $listado->idusuario }}
+                                                        </button>
+                                                    @endif
+                                                </center>
+                                            </td>
                                             <td>{{ $listado->rutus }}</td>
                                             <td>{{ $listado->nombresus }} {{ $listado->paternous }} {{ $listado->maternous }}
                                                 - {{ $listado->ffijous }} / {{ $listado->celus }}</td>
-                                            <td></td>
+                                            <td>
+                                                <div class="progress progress-xs progress-striped active">
+                                                    <div class="progress-bar progress-bar-success"
+                                                         style="width: {{ (($listado->avancepl1us+$listado->avancepl2us)*100/3) }}%">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-green">{{ number_format((($listado->avancepl1us+$listado->avancepl2us)*100/3),'.0') }}%</span></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -231,45 +264,66 @@
     </div>
 
     <script>
-        function mayusculas_rs(e) {
+        function my_pat(e) {
             var tecla = e.value;
-            $("#rsoc_emp").val(tecla.toUpperCase());
-            $("#rsoc_emp").css('border', '2px solid green');
+            $("#user_paterno").val(tecla.toUpperCase());
+            $("#user_paterno").css('border', '2px solid green');
             return;
         }
 
-        function mayusculas_g(e) {
+        function my_mat(e) {
             var tecla = e.value;
-            $("#giro_emp").val(tecla.toUpperCase());
-            $("#giro_emp").css('border', '2px solid green');
+            $("#user_materno").val(tecla.toUpperCase());
+            $("#user_materno").css('border', '2px solid green');
             return;
         }
 
-        function mayusculas_c(e) {
+        function my_nombres(e) {
             var tecla = e.value;
-            $("#calle_emp").val(tecla.toUpperCase());
-            $("#calle_emp").css('border', '2px solid green');
+            $("#user_nombres").val(tecla.toUpperCase());
+            $("#user_nombres").css('border', '2px solid green');
             return;
         }
 
-        function mayusculas_n(e) {
+        function my_prof(e) {
             var tecla = e.value;
-            $("#num_call_emp").val(tecla.toUpperCase());
-            $("#num_call_emp").css('border', '2px solid green');
+            $("#user_prof").val(tecla.toUpperCase());
+            $("#user_prof").css('border', '2px solid green');
             return;
         }
 
-        function mayusculas_b(e) {
+        function my_ofic(e) {
             var tecla = e.value;
-            $("#block_call_emp").val(tecla.toUpperCase());
-            $("#block_call_emp").css('border', '2px solid green');
+            $("#user_ofic").val(tecla.toUpperCase());
+            $("#user_ofic").css('border', '2px solid green');
             return;
         }
 
-        function mayusculas_sw(e) {
+        function my_calle(e) {
             var tecla = e.value;
-            $("#web_emp").val(tecla.toUpperCase());
-            $("#web_emp").css('border', '2px solid green');
+            $("#user_calle").val(tecla.toUpperCase());
+            $("#user_calle").css('border', '2px solid green');
+            return;
+        }
+
+        function my_block(e) {
+            var tecla = e.value;
+            $("#user_block").val(tecla.toUpperCase());
+            $("#user_block").css('border', '2px solid green');
+            return;
+        }
+
+        function my_villa(e) {
+            var tecla = e.value;
+            $("#user_villa").val(tecla.toUpperCase());
+            $("#user_villa").css('border', '2px solid green');
+            return;
+        }
+
+        function my_mail(e) {
+            var tecla = e.value;
+            $("#user_mailp").val(tecla.toUpperCase());
+            $("#user_mailp").css('border', '2px solid green');
             return;
         }
 
@@ -420,30 +474,74 @@
                     return;
                 }
 
-                if ($("#rsoc_emp").val() == "") {
-                    $("#rsoc_emp").css('border', '2px solid red');
+                if ($("#user_paterno").val() == "") {
+                    $("#user_paterno").css('border', '2px solid red');
                     $('#alerta_tab').html("" +
                         "<div class=\"alert alert-warning alert-dismissable\">\n" +
                         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
                         "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
-                        "Campo Razón Social es Obligatorio.\n" +
+                        "Campo Apellido Paterno es Obligatorio.\n" +
                         "</div>");
                     return;
                 }
 
-                if ($("#giro_emp").val() == "") {
-                    $("#giro_emp").css('border', '2px solid red');
+                if ($("#user_materno").val() == "") {
+                    $("#user_materno").css('border', '2px solid red');
                     $('#alerta_tab').html("" +
                         "<div class=\"alert alert-warning alert-dismissable\">\n" +
                         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
                         "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
-                        "Campo Giro es Obligatorio.\n" +
+                        "Campo Apellido Materno es Obligatorio.\n" +
                         "</div>");
                     return;
                 }
 
-                if ($("#calle_emp").val() == "") {
-                    $("#calle_emp").css('border', '2px solid red');
+                if ($("#user_nombres").val() == "") {
+                    $("#user_nombres").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Nombre es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_fecnac").val() == "") {
+                    $("#user_fecnac").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Fecha de Nacimiento es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_prof").val() == "") {
+                    $("#user_prof").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Profesión es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_ofic").val() == "") {
+                    $("#user_ofic").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Oficio es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_calle").val() == "") {
+                    $("#user_calle").css('border', '2px solid red');
                     $('#alerta_tab').html("" +
                         "<div class=\"alert alert-warning alert-dismissable\">\n" +
                         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
@@ -453,13 +551,35 @@
                     return;
                 }
 
-                if ($("#num_call_emp").val() == "") {
-                    $("#num_call_emp").css('border', '2px solid red');
+                if ($("#user_villa").val() == "") {
+                    $("#user_villa").css('border', '2px solid red');
                     $('#alerta_tab').html("" +
                         "<div class=\"alert alert-warning alert-dismissable\">\n" +
                         "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
                         "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
-                        "Campo Número es Obligatorio.\n" +
+                        "Campo Villa es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_cel").val() == "") {
+                    $("#user_cel").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Celular es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                if ($("#user_mailp").val() == "") {
+                    $("#user_mailp").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Mail Personal es Obligatorio.\n" +
                         "</div>");
                     return;
                 }

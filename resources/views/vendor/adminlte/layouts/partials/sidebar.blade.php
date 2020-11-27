@@ -27,17 +27,18 @@
                 <ul class="treeview-menu">
                     <li><a href="/NuevoCliente"><i class="fa fa-user-plus"></i> Registrar Cliente</a></li>
                     <li><a href="/VerClientes"><i class="fa fa-list"></i> Ver Clientes</a></li>
+                    <li><a href="/AprobarClientes"><i class="fa fa-check"></i> Aprobar Clientes</a></li>
                     <li><a href="/VerRepClientes"><i class="fa fa-tasks"></i> Reporte por Cliente</a></li>
                 </ul>
             </li>
             <li class="header">- OPCIONES DEL SISTEMA -</li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-gear'></i> <span>Usuarios</span> <i
+                <a href="#"><i class='fa fa-gear'></i> <span>Personal</span> <i
                         class="fa fa-angle-down pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="/CrearUsuario"><i class="fa fa-user"></i> Crear Usuario</a></li>
-                    <li><a href="/VerUsuarios"><i class="fa fa-gears"></i> Gestión de Usuarios</a></li>
-                    <li><a href="/RepUsuario"><i class="fa fa-tasks"></i> Reporte por Usuario</a></li>
+                    <li><a href="/CrearUsuario"><i class="fa fa-user"></i> Crear Personal</a></li>
+                    <li><a href="/VerUsuarios"><i class="fa fa-gears"></i> Gestión de Personal</a></li>
+                    <li><a href="/RepUsuario"><i class="fa fa-tasks"></i> Reporte por Persona</a></li>
                 </ul>
             </li>
             <li><a href="/AcercaDe"><i class='fa fa-info-circle'></i> <span>Acerca de Sistema</span></a></li>

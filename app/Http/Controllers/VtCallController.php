@@ -70,6 +70,7 @@ class VtCallController extends Controller
 
         $region_comuna = DB::table('vtcall_comunas')
             ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
+            ->orderby('vtcall_comunas.nombrecomuna', 'ASC')
             ->get();
 
         $usuarios_pend = DB::table('vtcall_usuarios')
@@ -122,89 +123,98 @@ class VtCallController extends Controller
 
     }
 
-
-    ////////////////////////////////////////////////////////////// OK
-
-    public function operacion_llamada()
-    {
-        return view('backend.operacion.llamadaentrante');
-    }
-
-    public function traer_datos_cliente(Request $request)
+    public function complementa_registrar_usuario(Request $request)
     {
 
-        $num_datos_cliente = DB::table('vtcall_clientes')
-            ->where('fonoentra1', $request->fonoip)
-            ->orwhere('fonoentra2', $request->fonoip)
-            ->count();
-
-        $datos_cliente = DB::table('vtcall_clientes')
-            ->join('vtcall_contactos', 'vtcall_contactos.vtcall_clientes_idclientes', 'vtcall_clientes.idclientes')
-            ->where('fonoentra1', $request->fonoip)
-            ->orwhere('fonoentra2', $request->fonoip)
-            ->get();
-
-        if ($num_datos_cliente == 0) {
-            echo 2;
-        } else {
-            return $datos_cliente;
-        }
-
-    }
-
-    public function traer_datos_num_ex(Request $request)
-    {
-
-        $num_datos_externos = DB::table('vtcall_externos')
-            ->where('numext', $request->fonoex)
-            ->count();
-
-        $datos_externos = DB::table('vtcall_externos')
-            ->where('numext', $request->fonoex)
-            ->get();
-
-        if ($num_datos_externos == 0) {
-            echo 2;
-        } else {
-            return $datos_externos;
-        }
-    }
-
-    public function finaliza_llamada(Request $request)
-    {
-
-        $idcliente = DB::table('vtcall_clientes')
-            ->where('fonoentra1', $request->fonocli)
-            ->Orwhere('fonoentra2', $request->fonocli)
+        $usuario = DB::table('vtcall_usuarios')
+            ->join('vtcall_comunas', 'vtcall_comunas.idvtcall_comunas', 'vtcall_usuarios.vtcall_comunas_idvtcall_comunas')
+            ->join('vtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones', 'vtcall_regiones.idvtcall_regiones')
+            ->where('idvtcallusers', $request->iduser)
             ->first();
 
-        DB::table('vtcall_externos')
-            ->updateOrInsert(
-                ['numext' => $request->fonoex],
-                ['numext' => $request->fonoex, 'nombreext' => $request->nombreex, 'empresaext' => $request->empresaex, 'fonosecext' => $request->fonsecex, 'mailext' => $request->mailex]
-            );
-
-        $idexterno = DB::table('vtcall_externos')
-            ->where('numext', $request->fonoex)
+        $contrato = DB::table('vtcall_contratos_u')
+            ->join('vtcall_bancos', 'vtcall_bancos.idbanco', 'vtcall_contratos_u.vtcall_bancos_idbanco')
+            ->join('vtcall_tipo_cuenta', 'vtcall_tipo_cuenta.idtipocuenta', 'vtcall_contratos_u.vtcall_tipo_cuenta_idtipocuenta')
+            ->where([
+                ['vtcall_usuarios_idvtcallusers', $request->iduser],
+                ['numcontratocu', 1]
+            ])
             ->first();
 
-        DB::table('vtcall_registro_llamada')->insert([
-            'fechorainillam' => $request->fectoma,
-            'fechorafinllam' => date('Y-m-d h:i:s'),
-            'mensajellam' => $request->motiex,
-            'accion1llam' => $request->ac1,
-            'accion2llam' => $request->ac2,
-            'accion3llam' => $request->ac3,
-            'derivacionllam' => $request->deriva,
-            'estadoaudit' => null,
-            'vtcall_clientes_idclientes' => $idcliente->idclientes,
-            'vtcall_externos_idvtcallext' => $idexterno->idvtcallext,
+        $bancos = DB::table('vtcall_bancos')
+            ->where([
+                ['estadobanco', 1]
+            ])
+            ->get();
+
+        $tipos_cuenta = DB::table('vtcall_tipo_cuenta')
+            ->where([
+                ['estadotipcuenta', 1]
+            ])
+            ->get();
+
+        return view('backend.usuarios.ficha_complementa_usuario', [
+            'usuario' => $usuario,
+            'tipo_cta' => $tipos_cuenta,
+            'bancos' => $bancos,
+            'contrato' => $contrato
         ]);
 
-        echo 1;
-
     }
 
+    public function registra_c1_usuario(Request $request)
+    {
+
+        DB::table('vtcall_contratos_u')->insert([
+            'fecregistrocu' => date('Y-m-d H:i:s'),
+            'numcontratocu' => 1,
+            'tipocontratocu' => $request->tipocontrato,
+            'fecinicu' => $request->fec_ini_cont,
+            'fecfincu' => null,
+            'cargocu' => $request->tipocargo,
+            'previsioncu' => $request->idprev,
+            'saludcu' => $request->idsalud,
+            'sueldobasecu' => $request->sueldo_base,
+            'asigncu' => $request->asignaciones,
+            'comcu' => $request->comisiones,
+            'numctacu' => $request->numcta,
+            'estadocu' => 1,
+            'vtcall_usuarios_idvtcallusers' => $request->iduser,
+            'vtcall_bancos_idbanco' => $request->idbanco,
+            'vtcall_tipo_cuenta_idtipocuenta' => $request->idtipoc
+        ]);
+
+        DB::table('vtcall_usuarios')
+            ->where('idvtcallusers', $request->iduser)
+            ->update([
+                'avancepl2us' => 1,
+                'idusuario' => 'USR' . date('y') . rand(10, 999),
+            ]);
+
+        if ($request->tipocargo == 'VENDEDOR') {
+
+            $usr_vend = 'VND' . date('y') . rand(10, 999);
+
+            DB::table('vtcall_usuarios')
+                ->where('idvtcallusers', $request->iduser)
+                ->update([
+                    'avancepl2us' => 1,
+                    'idusuario' => $usr_vend,
+                ]);
+
+            DB::table('vtcall_vendedores')->insert([
+                'feccreacionvend' => date('Y-m-d H:i:s'),
+                'fecbajavend' => null,
+                'nombrevend' => $request->nomvend,
+                'clavevend' => $usr_vend,
+                'estadovend' => 1,
+                'vtcall_usuarios_idvtcallusers' => $request->iduser,
+            ]);
+        }
+
+        return 1;
+
+    }
 
     ////////////////////////////////////////////////////////////// OK
 
@@ -484,6 +494,88 @@ class VtCallController extends Controller
                 'infoextra' => $request->infoextra
             ]);
         echo 1;
+    }
+
+    ////////////////////////////////////////////////////////////// OK
+
+    public function operacion_llamada()
+    {
+        return view('backend.operacion.llamadaentrante');
+    }
+
+    public function traer_datos_cliente(Request $request)
+    {
+
+        $num_datos_cliente = DB::table('vtcall_clientes')
+            ->where('fonoentra1', $request->fonoip)
+            ->orwhere('fonoentra2', $request->fonoip)
+            ->count();
+
+        $datos_cliente = DB::table('vtcall_clientes')
+            ->join('vtcall_contactos', 'vtcall_contactos.vtcall_clientes_idclientes', 'vtcall_clientes.idclientes')
+            ->where('fonoentra1', $request->fonoip)
+            ->orwhere('fonoentra2', $request->fonoip)
+            ->get();
+
+        if ($num_datos_cliente == 0) {
+            echo 2;
+        } else {
+            return $datos_cliente;
+        }
+
+    }
+
+    public function traer_datos_num_ex(Request $request)
+    {
+
+        $num_datos_externos = DB::table('vtcall_externos')
+            ->where('numext', $request->fonoex)
+            ->count();
+
+        $datos_externos = DB::table('vtcall_externos')
+            ->where('numext', $request->fonoex)
+            ->get();
+
+        if ($num_datos_externos == 0) {
+            echo 2;
+        } else {
+            return $datos_externos;
+        }
+    }
+
+    public function finaliza_llamada(Request $request)
+    {
+
+        $idcliente = DB::table('vtcall_clientes')
+            ->where('fonoentra1', $request->fonocli)
+            ->Orwhere('fonoentra2', $request->fonocli)
+            ->first();
+
+        DB::table('vtcall_externos')
+            ->updateOrInsert(
+                ['numext' => $request->fonoex],
+                ['numext' => $request->fonoex, 'nombreext' => $request->nombreex, 'empresaext' => $request->empresaex, 'fonosecext' => $request->fonsecex, 'mailext' => $request->mailex]
+            );
+
+        $idexterno = DB::table('vtcall_externos')
+            ->where('numext', $request->fonoex)
+            ->first();
+
+        DB::table('vtcall_registro_llamada')->insert([
+            'fechorainillam' => $request->fectoma,
+            'fechorafinllam' => date('Y-m-d h:i:s'),
+            'mensajellam' => $request->motiex,
+            'accion1llam' => $request->ac1,
+            'accion2llam' => $request->ac2,
+            'accion3llam' => $request->ac3,
+            'derivacionllam' => $request->deriva,
+            'estadoaudit' => null,
+            'vtcall_clientes_idclientes' => $idcliente->idclientes,
+            'vtcall_externos_idvtcallext' => $idexterno->idvtcallext,
+        ]);
+
+        echo 1;
+
     }
 
     ///////////////////////////////////////////////////////////////////
