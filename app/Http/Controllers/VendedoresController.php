@@ -141,4 +141,63 @@ class VendedoresController extends Controller
 
     }
 
+    public function aspirantes()
+    {
+
+        $region_comuna = DB::table('vtcall_comunas')
+            ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
+            ->orderby('vtcall_comunas.nombrecomuna', 'ASC')
+            ->get();
+
+        return view('frontend.vendedores.aspirantes.inscripcion', [
+            'comunas' => $region_comuna
+        ]);
+
+    }
+
+    public function aspirantes2()
+    {
+
+        $region_comuna = DB::table('vtcall_comunas')
+            ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
+            ->orderby('vtcall_comunas.nombrecomuna', 'ASC')
+            ->get();
+
+        return view('frontend.vendedores.aspirantes.inscripcion2', [
+            'comunas' => $region_comuna
+        ]);
+
+    }
+
+    public function guardar_aspirantes(Request $request)
+    {
+
+        $ex_asp = DB::table('vtcall_aspirantes')
+            ->where('rutasp', $request->rut)
+            ->count();
+
+        if ($ex_asp == 0) {
+            DB::table('vtcall_aspirantes')->insert([
+                'feccreasp' => date('Y-m-d H:i:s'),
+                'fecmodasp' => null,
+                'rutasp' => $request->rut,
+                'appaternoasp' => $request->apasp,
+                'apmaternoasp' => $request->amasp,
+                'nombresasp' => $request->nomasp,
+                'fecnacasp' => $request->fecnacasp,
+                'correoasp' => $request->mailcont,
+                'celularasp' => $request->numcelver,
+                'nivelestasp' => $request->nivelest,
+                'obsasp' => $request->obsasp,
+                'estadoasp' => 1,
+                'vtcall_comunas_idvtcall_comunas' => $request->comunaprev,
+            ]);
+            return $this->aspirantes2();
+        } else {
+            return $this->aspirantes2();
+        }
+
+
+    }
+
 }

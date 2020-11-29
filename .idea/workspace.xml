@@ -2,35 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/dashboard.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/signin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_complementa_usuario.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/login.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/nologin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/relogin.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/appfake.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebarfake.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/aspirantes/inscripcion.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/aspirantes/inscripcion2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DocumentosInternosController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PruebasController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/acc_denegado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/acc_denegado.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/buscar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/erroneos.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/ficha_docs_interno.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/ficha_error.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/gestion_docs_internos.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/mantenedores.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/back_end/documentos_internos/registrar.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_crea_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_crea_cliente.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_crea_usuario.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_crea_usuario.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/contentheader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/contentheader.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/mainheader.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/mainheader.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +143,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aplicativo Rendiciones/resources/views/vendor/adminlte/layouts/partials/contentheader.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Escritorio/Ordenar/Aplicativo PartesDigital/resources/views/back_end/documentos_internos/registrar.blade.php" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -237,7 +212,8 @@
       <workItem from="1606080346857" duration="12056000" />
       <workItem from="1606132626985" duration="21000" />
       <workItem from="1606251665348" duration="1127000" />
-      <workItem from="1606438396860" duration="8147000" />
+      <workItem from="1606438396860" duration="8476000" />
+      <workItem from="1606616821096" duration="5071000" />
     </task>
     <servers />
   </component>
@@ -245,12 +221,12 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1606445751377">
+    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1606621642235">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606132646828" />
     <state x="2606" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605616921881" />
-    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606445751377" />
+    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606621642235" />
     <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605725282328">
       <screen x="-1920" y="0" width="1920" height="1042" />
     </state>

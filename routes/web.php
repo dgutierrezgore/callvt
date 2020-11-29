@@ -17,6 +17,11 @@ Route::get('/PanelVentas', 'VendedoresController@login');
 Route::post('/GuardarPreVenta', 'VendedoresController@guardar_preventa');
 Route::get('/GuardarPreVenta', 'VendedoresController@login');
 
+Route::get('/trabajaconnosotros', 'VendedoresController@aspirantes');
+Route::get('/TrabajaConNosotros', 'VendedoresController@aspirantes');
+Route::post('/GuardarAspirante', 'VendedoresController@guardar_aspirantes');
+
+
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'DocumentosInternosController@index');
