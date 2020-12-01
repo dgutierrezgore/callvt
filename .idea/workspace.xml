@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/aspirantes/inscripcion.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/aspirantes/inscripcion2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/aspirantes/formulario.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/aspirantes/listado.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/aspirantes/listadoparaid.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +219,10 @@
       <workItem from="1606132626985" duration="21000" />
       <workItem from="1606251665348" duration="1127000" />
       <workItem from="1606438396860" duration="8476000" />
-      <workItem from="1606616821096" duration="5071000" />
+      <workItem from="1606616821096" duration="5332000" />
+      <workItem from="1606740655408" duration="7788000" />
+      <workItem from="1606771455543" duration="604000" />
+      <workItem from="1606783108037" duration="4527000" />
     </task>
     <servers />
   </component>
@@ -231,15 +240,15 @@
       <screen x="-1920" y="0" width="1920" height="1042" />
     </state>
     <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.0.1920.1042/1920.0.1920.1050/0.0.1536.834@-1920.0.1920.1042" timestamp="1605725282328" />
-    <state x="-1059" y="240" key="run.anything.popup" timestamp="1605705612465">
+    <state x="-1059" y="240" key="run.anything.popup" timestamp="1606750787794">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="-1059" y="240" key="run.anything.popup/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1605705612465" />
+    <state x="-1059" y="240" key="run.anything.popup/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1606750787794" />
     <state x="689" y="191" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1604666570336" />
-    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1606086595103">
+    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1606787433381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1606086595103" />
+    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1606787433381" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -248,11 +257,6 @@
           <url>file://$PROJECT_DIR$/resources/views/backend/registro_llamadas.blade.php</url>
           <line>18</line>
           <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php</url>
-          <line>490</line>
-          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -24,9 +24,14 @@ Route::post('/GuardarAspirante', 'VendedoresController@guardar_aspirantes');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/home', 'DocumentosInternosController@index');
-    Route::get('/', 'VtCallController@index');
+    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
 
+    Route::get('/Aspirantes', 'VtCallController@aspirantes');
+    Route::post('/AceptarAspirante', 'VtCallController@acepta_postulante');
+    Route::post('/DescartarAspirante', 'VtCallController@descarta_postulante');
+    Route::post('/CrearVendedor', 'VtCallController@crear_vendedor');
+    Route::get('/VendedorID', 'VtCallController@id_vendedor');
 
 ///////////////
 ///

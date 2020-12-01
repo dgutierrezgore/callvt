@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'owa.gorebiobio.cl'),
+    'host' => env('MAIL_HOST', 'mail.virtualcall.cl'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'intranet@gorebiobio.cl'),
-        'name' => env('MAIL_FROM_NAME', 'Intranet Gobierno Regional'),
+        'address' => env('MAIL_FROM_ADDRESS', 'plataforma@virtualcall.cl'),
+        'name' => env('MAIL_FROM_NAME', 'Plataforma VirtualCall'),
     ],
 
     /*

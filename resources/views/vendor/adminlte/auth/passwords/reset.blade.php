@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Login Oficina de Partes Virtual</title>
+    <title>Login Oficina VTCALL System</title>
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
     <link href="/css/login.css" rel="stylesheet" type="text/css"/>
 
@@ -12,12 +12,8 @@
 
 <div id="contenedor">
     <br>
-    <img id="cnca-footer"
-         src="https://sitio.gorebiobio.cl/wp-content/themes/html5blank/img/auxi/logo-header-200x300.png" width="100"
-         height="135" alt="CNCA"/>
     <br>
-    <h2><strong>Bienvenido(a), Oficina de Partes Virtual</strong></h2>
-    <h2>Gobierno Regional Región del Biobío</h2>
+    <h2><strong>VTCALL System</strong> <small>V.01</small></h2>
     <br>
     <hr>
     <br>
@@ -72,24 +68,22 @@
     <br><br>
     <div class="box green">
         <br>
-        <center><img src="https://sitio.gorebiobio.cl/wp-content/uploads/2019/02/GORE-BIOBIO.jpg" width="435" alt="">
+        <center><img src="https://www.chacodiapordia.com/wp-content/uploads/2017/07/call-center.jpg" width="380" alt="">
         </center>
 
     </div>
     <div class="clear"></div>
 
-    <div id="footer"><br>
+    <div id="footer"><br><br>
         <img id="cnca-footer"
-             src="https://sitio.gorebiobio.cl/wp-content/themes/html5blank/img/auxi/logo-header-200x300.png" width="100"
-             height="135" alt="CNCA"/>
+             src="/img/logovtcall.png" alt="CNCA"/>
 
         <p>
-            <a href="http://www.gorebiobio.cl/" target="_blank">Gobierno Regional de la región del Biobío.</a><br/>
-            <a href="http://soporte.gorebiobio.cl/">Unidad Informática y Seguridad de la Información.</a><br/>
-            Av. Prat #525, Concepción.<br/>
-            Contacto: <a href="mailto:dgutierrez@gorebiobio.cl">dgutierrez@gorebiobio.cl - Anexo: 782</a><br/>
+            <a href="http://www.gorebiobio.cl/" target="_blank">VT Call System SpA.</a><br/>
+            XXXX, Concepción.<br/>
+            Contacto: <a href="mailto:xxx@xxx.cl">xxx@xxx.xx - Anexo: xxx</a><br/>
             <span style="display:block"><small>V. UI /dgf 0.001-alpha</small></span>
-        </p>
+        </p><br>
 
 
     </div>

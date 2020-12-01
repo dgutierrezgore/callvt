@@ -21,11 +21,6 @@ class VtCallController extends Controller
         //$this->middleware('auth');
     }
 
-    public function index()
-    {
-        return view('vendor.adminlte.home');
-    }
-
     public function registro_llamadas()
     {
         return view('backend.registro_llamadas');
@@ -55,6 +50,42 @@ class VtCallController extends Controller
     public function ver_rep_usuario()
     {
         return view('backend.reporte_por_usuario');
+    }
+
+    public function registra_accesos_indebidos($lugar_sistema)
+    {
+        DB::table('sys_acc_denegado')->insert([
+            'fecregistro' => date('Y-m-d H:i:s'),
+            'ip' => \Request::ip(),
+            'tipo' => $lugar_sistema,
+            'sys_sistemas_idsistemasgore' => 1,
+            'users_id' => Auth::id()
+        ]);
+    }
+
+    public function accesos()
+    {
+
+        $accesos = DB::table('sys_acc_sistemas')
+            ->where([
+                ['users_id', Auth::user()->id]
+            ])
+            ->first();
+
+        if ($accesos == null) {
+            return 0;
+        }
+
+        if ($accesos->sys_sistemas_idsistemasgore == 1 && $accesos->estadoacc == 1) {
+            if ($accesos->nivelacc == 1 || $accesos->nivelacc == 2) {
+                return 1;
+            } else {
+                return 0;
+            }
+        } else {
+            return 0;
+        }
+
     }
 
     public function acerca_de()
@@ -91,32 +122,71 @@ class VtCallController extends Controller
             ->count();
 
         if ($ex_usuario == 0) {
-            $id_usuario = DB::table('vtcall_usuarios')->insertGetId([
-                'fecregistrous' => date('Y-m-d H:i:s'),
-                'rutus' => $request->rut,
-                'paternous' => $request->user_paterno,
-                'maternous' => $request->user_materno,
-                'nombresus' => $request->user_nombres,
-                'nacus' => $request->user_nacionalidad,
-                'fecnacus' => $request->user_fecnac,
-                'ecivilus' => $request->user_ecivil,
-                'profesionus' => $request->user_prof,
-                'oficious' => $request->user_ofic,
-                'calleus' => $request->user_calle,
-                'numus' => $request->user_num,
-                'blockus' => $request->user_block,
-                'villaus' => $request->user_villa,
-                'ffijous' => $request->user_ffijo,
-                'celus' => $request->user_cel,
-                'mailpus' => $request->user_mailp,
-                'avancepl1us' => 1,
-                'avancepl2us' => 0,
-                'avancepl3us' => 0,
-                'avancepl4us' => 0,
-                'estadous' => 1,
-                'vtcall_comunas_idvtcall_comunas' => $request->idcomuna,
-            ]);
-            echo 1;
+            if ($request->tform == 'EXT_0120') {
+                $id_usuario = DB::table('vtcall_usuarios')->insertGetId([
+                    'fecregistrous' => date('Y-m-d H:i:s'),
+                    'rutus' => $request->rut,
+                    'paternous' => $request->user_paterno,
+                    'maternous' => $request->user_materno,
+                    'nombresus' => $request->user_nombres,
+                    'nacus' => $request->user_nacionalidad,
+                    'fecnacus' => $request->user_fecnac,
+                    'ecivilus' => $request->user_ecivil,
+                    'profesionus' => $request->user_prof,
+                    'oficious' => $request->user_ofic,
+                    'calleus' => $request->user_calle,
+                    'numus' => $request->user_num,
+                    'blockus' => $request->user_block,
+                    'villaus' => $request->user_villa,
+                    'ffijous' => $request->user_ffijo,
+                    'celus' => $request->user_cel,
+                    'mailpus' => $request->user_mailp,
+                    'avancepl1us' => 1,
+                    'avancepl2us' => 0,
+                    'avancepl3us' => 0,
+                    'avancepl4us' => 0,
+                    'estadous' => 1,
+                    'vtcall_comunas_idvtcall_comunas' => $request->idcomuna,
+                ]);
+
+                DB::table('vtcall_aspirantes')
+                    ->where('idaspirantesvend', $request->idasp)
+                    ->update([
+                        'fecmodasp' => date('Y-m-d H:i:s'),
+                        'estadoasp' => 4,
+                    ]);
+
+                echo 1;
+
+            } else {
+                $id_usuario = DB::table('vtcall_usuarios')->insertGetId([
+                    'fecregistrous' => date('Y-m-d H:i:s'),
+                    'rutus' => $request->rut,
+                    'paternous' => $request->user_paterno,
+                    'maternous' => $request->user_materno,
+                    'nombresus' => $request->user_nombres,
+                    'nacus' => $request->user_nacionalidad,
+                    'fecnacus' => $request->user_fecnac,
+                    'ecivilus' => $request->user_ecivil,
+                    'profesionus' => $request->user_prof,
+                    'oficious' => $request->user_ofic,
+                    'calleus' => $request->user_calle,
+                    'numus' => $request->user_num,
+                    'blockus' => $request->user_block,
+                    'villaus' => $request->user_villa,
+                    'ffijous' => $request->user_ffijo,
+                    'celus' => $request->user_cel,
+                    'mailpus' => $request->user_mailp,
+                    'avancepl1us' => 1,
+                    'avancepl2us' => 0,
+                    'avancepl3us' => 0,
+                    'avancepl4us' => 0,
+                    'estadous' => 1,
+                    'vtcall_comunas_idvtcall_comunas' => $request->idcomuna,
+                ]);
+
+                echo 1;
+            }
         } else {
             echo 2;
         }
@@ -216,24 +286,132 @@ class VtCallController extends Controller
 
     }
 
+    public function aspirantes()
+    {
+
+        $aspirantes = DB::table('vtcall_aspirantes')
+            ->join('vtcall_comunas', 'vtcall_comunas.idvtcall_comunas', 'vtcall_aspirantes.vtcall_comunas_idvtcall_comunas')
+            ->where('vtcall_aspirantes.estadoasp', 1)
+            ->get();
+
+        $aceptados = DB::table('vtcall_aspirantes')
+            ->join('vtcall_comunas', 'vtcall_comunas.idvtcall_comunas', 'vtcall_aspirantes.vtcall_comunas_idvtcall_comunas')
+            ->where('vtcall_aspirantes.estadoasp', 2)
+            ->get();
+
+        $descartados = DB::table('vtcall_aspirantes')
+            ->join('vtcall_comunas', 'vtcall_comunas.idvtcall_comunas', 'vtcall_aspirantes.vtcall_comunas_idvtcall_comunas')
+            ->where('vtcall_aspirantes.estadoasp', 3)
+            ->get();
+
+        return view('backend.aspirantes.listado', [
+            'aspirantes' => $aspirantes,
+            'aceptados' => $aceptados,
+            'descartados' => $descartados
+        ]);
+    }
+
+    public function acepta_postulante(Request $request)
+    {
+
+        DB::table('vtcall_aspirantes')
+            ->where('idaspirantesvend', $request->idasp)
+            ->update([
+                'fecmodasp' => date('Y-m-d H:i:s'),
+                'estadoasp' => 2,
+            ]);
+
+        return $this->aspirantes();
+
+    }
+
+    public function descarta_postulante(Request $request)
+    {
+
+        DB::table('vtcall_aspirantes')
+            ->where('idaspirantesvend', $request->idasp)
+            ->update([
+                'fecmodasp' => date('Y-m-d H:i:s'),
+                'estadoasp' => 3,
+            ]);
+
+        return $this->aspirantes();
+    }
+
+    public function crear_vendedor(Request $request)
+    {
+
+        $region_comuna = DB::table('vtcall_comunas')
+            ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
+            ->orderby('vtcall_comunas.nombrecomuna', 'ASC')
+            ->get();
+
+        $info_asp = DB::table('vtcall_aspirantes')
+            ->where('idaspirantesvend', $request->idasp)
+            ->first();
+
+        return view('backend.aspirantes.formulario', [
+            'regioncomuna' => $region_comuna,
+            'info_asp' => $info_asp,
+            ''
+        ]);
+
+
+    }
+
+    public function id_vendedor()
+    {
+
+        $usuarios_pend = DB::table('vtcall_usuarios')
+            ->where('estadous', 1)
+            ->get();
+
+        return view('backend.aspirantes.listadoparaid', [
+            'usuariospend' => $usuarios_pend,
+        ]);
+
+    }
+
     ////////////////////////////////////////////////////////////// OK
 
     public function nuevo_cliente()
     {
 
-        $region_comuna = DB::table('vtcall_comunas')
-            ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
-            ->get();
+        $accesos = DB::table('sys_acc_sistemas')
+            ->where([
+                ['users_id', Auth::user()->id]
+            ])
+            ->first();
 
-        $ultimos_5_clientes = DB::table('vtcall_clientes')
-            ->orderby('idclientes', 'DESC')
-            ->take(5)
-            ->get();
+        if ($accesos == null) {
+            $this->registra_accesos_indebidos('CREAR CLIENTE');
+            return view('backend.acc_denegado');
+        }
 
-        return view('backend.clientes.ficha_crea_cliente', [
-            'regioncomuna' => $region_comuna,
-            'u_5_c' => $ultimos_5_clientes,
-        ]);
+        if ($accesos->sys_sistemas_idsistemasgore == 1 && $accesos->estadoacc == 1) {
+            if ($accesos->nivelacc == 1 || $accesos->nivelacc == 3) {
+                $region_comuna = DB::table('vtcall_comunas')
+                    ->join('vtcall_regiones', 'vtcall_regiones.idvtcall_regiones', 'vtcall_comunas.vtcall_regiones_idvtcall_regiones')
+                    ->get();
+
+                $ultimos_5_clientes = DB::table('vtcall_clientes')
+                    ->orderby('idclientes', 'DESC')
+                    ->take(5)
+                    ->get();
+
+                return view('backend.clientes.ficha_crea_cliente', [
+                    'regioncomuna' => $region_comuna,
+                    'u_5_c' => $ultimos_5_clientes,
+                ]);
+            } else {
+                $this->registra_accesos_indebidos('CREAR CLIENTE');
+                return view('backend.acc_denegado');
+            }
+        } else {
+            $this->registra_accesos_indebidos('CREAR CLIENTE');
+            return view('backend.acc_denegado');
+        }
+
     }
 
     public function registrar_cliente(Request $request)
@@ -500,7 +678,28 @@ class VtCallController extends Controller
 
     public function operacion_llamada()
     {
-        return view('backend.operacion.llamadaentrante');
+        $accesos = DB::table('sys_acc_sistemas')
+            ->where([
+                ['users_id', Auth::user()->id]
+            ])
+            ->first();
+
+        if ($accesos == null) {
+            $this->registra_accesos_indebidos('OPERADORA LLAMADA');
+            return view('backend.acc_denegado');
+        }
+
+        if ($accesos->sys_sistemas_idsistemasgore == 1 && $accesos->estadoacc == 1) {
+            if ($accesos->nivelacc == 1 || $accesos->nivelacc == 2) {
+                return view('backend.operacion.llamadaentrante');
+            } else {
+                $this->registra_accesos_indebidos('OPERADORA LLAMADA');
+                return view('backend.acc_denegado');
+            }
+        } else {
+            $this->registra_accesos_indebidos('OPERADORA LLAMADA');
+            return view('backend.acc_denegado');
+        }
     }
 
     public function traer_datos_cliente(Request $request)

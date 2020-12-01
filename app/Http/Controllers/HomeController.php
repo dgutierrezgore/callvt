@@ -25,7 +25,7 @@ class HomeController extends Controller
             ])
             ->first();
 
-        if ($accesos==null){
+        if ($accesos == null) {
             DB::table('sys_acc_denegado')->insert([
                 'fecregistro' => date('Y-m-d H:i:s'),
                 'ip' => \Request::ip(),
@@ -37,7 +37,7 @@ class HomeController extends Controller
         }
 
         if ($accesos->sys_sistemas_idsistemasgore == 1 && $accesos->estadoacc == 1) {
-            if ($accesos->nivelacc == 1 || $accesos->nivelacc == 2) {
+            if ($accesos->nivelacc == 1 || $accesos->nivelacc == 2 || $accesos->nivelacc == 3 || $accesos->nivelacc == 4) {
                 return view('adminlte::home');
             } else {
                 DB::table('sys_acc_denegado')->insert([

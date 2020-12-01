@@ -124,7 +124,8 @@
                                         <label for="inputEmail3" class="col-sm-1 control-label">Nacionalidad</label>
                                         <div class="col-sm-2">
                                             <input type="text" class="form-control" min="0" id="nac_rep"
-                                                   name="nac_rep" onkeyup="mayusculas_nac(this)" value="CHILENA" required>
+                                                   name="nac_rep" onkeyup="mayusculas_nac(this)" value="CHILENA"
+                                                   required>
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -654,18 +655,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-1 control-label">Fono IP 1</label>
+                                            <label for="inputEmail3" class="col-sm-2 control-label">Asignación de ID
+                                                Entrante</label>
                                             <div class="col-sm-2">
                                                 <select class="form-control" name="fonoip1" id="fonoip1">
-                                                    <option value="7001">7001</option>
-                                                    <option value="7002">7002</option>
-                                                    <option value="7003">7003</option>
-                                                </select>
-                                            </div>
-                                            <label for="inputEmail3" class="col-sm-1 control-label">Fono IP 2</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control" name="fonoip2" id="fonoip2">
-                                                    <option value="NA">NO APLICA</option>
                                                     <option value="7001">7001</option>
                                                     <option value="7002">7002</option>
                                                     <option value="7003">7003</option>
