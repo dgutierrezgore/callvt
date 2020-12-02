@@ -691,7 +691,15 @@ class VtCallController extends Controller
 
         if ($accesos->sys_sistemas_idsistemasgore == 1 && $accesos->estadoacc == 1) {
             if ($accesos->nivelacc == 1 || $accesos->nivelacc == 2) {
-                return view('backend.operacion.llamadaentrante');
+                $vend = DB::table('vtcall_vendedores')
+                    ->join('vtcall_usuarios', 'vtcall_usuarios.idvtcallusers', 'vtcall_vendedores.vtcall_usuarios_idvtcallusers')
+                    ->where('estadovend', 1)
+                    ->orderby('vtcall_vendedores.nombrevend', 'ASC')
+                    ->get();
+
+                return view('backend.operacion.llamadaentrante', [
+                    'vendedores' => $vend
+                ]);
             } else {
                 $this->registra_accesos_indebidos('OPERADORA LLAMADA');
                 return view('backend.acc_denegado');

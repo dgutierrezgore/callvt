@@ -26,6 +26,9 @@
                     <li class="active"><a href="#inicio" data-toggle="tab"><i class="fa fa-phone"></i>
                             Operación General de Llamadas Entrante</a>
                     </li>
+                    <li><a href="#vendedores" data-toggle="tab"><i class="fa fa-users"></i>
+                            Vendedores VT CALL</a>
+                    </li>
                 </ul>
 
                 <div class="tab-content">
@@ -38,7 +41,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO Interno</label>
+                                            <label for="inputEmail3" class="col-sm-3 control-label">FOLIO INTERNO</label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoip"
                                                        name="fonoip" autocomplete="off" required>
@@ -80,7 +83,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO Externo</label>
+                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO EXTERNO</label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoex"
                                                        name="fonoex" autocomplete="off" required>
@@ -202,6 +205,44 @@
 
                             </div>
                         </div>
+                    </div>
+
+                    <div class="tab-pane" id="vendedores">
+
+                        <div class="box">
+                            <div class="box-header">
+                                <h3 class="box-title">Grilla de todos los vendedores VirtualCALL habilitados</h3>
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <table id="GrillaPrincipal" class="table table-bordered table-hover">
+                                                <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Teléfono Celular</th>
+                                                    <th>Correo Electrónico</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach($vendedores as $listado)
+                                                    <tr>
+                                                        <td>{{ $listado->nombrevend }}</td>
+                                                        <td>+56 9 {{ $listado->celus }}</td>
+                                                        <td>{{ $listado->mailpus }}</td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+
                     </div>
                 </div>
 

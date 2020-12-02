@@ -15,7 +15,7 @@
 @section('main-content')
 
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#datos_principales" data-toggle="tab"><i class="fa fa-users"></i>
@@ -76,7 +76,12 @@
                                                         ACEPTAR
                                                     </button>
                                                 </form>
-                                                <br>
+                                            </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td colspan="6"><strong>OBSERVACIÓN</strong> : {{ $listado->obsasp }}</td>
+                                            <td>
                                                 <form action="/DescartarAspirante" method="post">
                                                     <input type="hidden" name="idasp"
                                                            value="{{ $listado->idaspirantesvend }}">
@@ -86,7 +91,12 @@
                                                     </button>
                                                 </form>
                                             </td>
-
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7"></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="7"></td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -212,26 +222,6 @@
                 <!-- /.tab-content -->
             </div>
         </div>
-
-
-        <div class="col-md-2">
-            <!-- Profile Image -->
-            <div class="box box-warning">
-                <div class="box-header with-border">
-                    <h4 class="box-title"><i class="fa fa-info"></i> Información del Usuario</h4>
-                </div>
-                <div class="box-body box-profile">
-
-                    <center><img src="https://adminlte.io/themes/AdminLTE/dist/img/user2-160x160.jpg" class="img-circle"
-                                 alt="User Image"></center>
-
-                    <hr>
-                    <center><h4>Daniel E. Gutiérrez Fariña</h4></center>
-                </div>
-                <!-- /.box-body -->
-            </div>
-        </div>
-
     </div>
 
 @endsection
