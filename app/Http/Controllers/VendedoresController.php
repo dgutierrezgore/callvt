@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Ajaxray\PHPWatermark\Watermark;
+use App\Mail\AvisoPostulacionRecibida;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Mail;
@@ -11,11 +12,19 @@ use App\Mail\AvisoReEnvioDocumentoInterno;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\This;
 use PhpParser\Node\Stmt\Return_;
 use PhpParser\Node\Stmt\TryCatch;
+use App\Clients;
+use Twilio\Rest\Client;
 
 class VendedoresController extends Controller
 {
+    protected $client;
+
+    public function __construct() {
+        $this->twilioClient = new Client('ACe7ef376b767348818c418cb118048628', 'ffc27e83f62ea619ab52ae7d584534ad');
+    }
 
     public function login()
     {
@@ -192,11 +201,47 @@ class VendedoresController extends Controller
                 'estadoasp' => 1,
                 'vtcall_comunas_idvtcall_comunas' => $request->comunaprev,
             ]);
+
+            $comuna = DB::table('vtcall_comunas')
+                ->where('idvtcall_comunas', $request->comunaprev)
+                ->first();
+
+            $data_correo = array(
+                'nombre' => $request->nomasp,
+                'nombrecompleto' => $request->nomasp . ' ' . $request->apasp . ' ' . $request->amasp,
+                'fono' => $request->numcelver,
+                'correo' => $request->mailcont,
+                'comuna' => $comuna->nombrecomuna,
+                'obs' => $request->obsasp,
+            );
+
+            Mail::to($request->mailcont)
+                ->cc('csalinas@virtualcall.cl')
+                ->bcc('soporte@virtualcall.cl')
+                ->send(new AvisoPostulacionRecibida($data_correo));
+
             return $this->aspirantes2();
         } else {
             return $this->aspirantes2();
         }
 
+
+    }
+
+    public function hola()
+    {
+
+        $twilio = new Client('ACe7ef376b767348818c418cb118048628', 'ffc27e83f62ea619ab52ae7d584534ad');
+
+        $message = $twilio->messages
+            ->create("whatsapp:+56966550512", // to
+                array(
+                    "from" => "whatsapp:+14155238886",
+                    "body" => "Mensaje desde VirtualCALL"
+                )
+            );
+
+        print($message->sid);
 
     }
 

@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Mail/AvisoPostulacionRecibida.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/correos/avisopostrec.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/aspirantes/listado.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/aspirantes/listado.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/AvisoDocumentoInterno.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/correos/avisodocint.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/correos/avisoreenviodocint.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +141,13 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/authy/php" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/twilio/sdk" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jAbIAEnu5ZahhiZ7xPzVWlyFdI" />
@@ -142,7 +159,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Escritorio/Ordenar/Aplicativo PartesDigital/resources/views/back_end/documentos_internos/registrar.blade.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aplicativo Rendiciones/app/Http/Controllers/RendicionesController.php" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -219,7 +236,10 @@
       <workItem from="1606788134880" duration="186000" />
       <workItem from="1606832612694" duration="791000" />
       <workItem from="1606849811440" duration="583000" />
-      <workItem from="1606862770952" duration="2740000" />
+      <workItem from="1606862770952" duration="3393000" />
+      <workItem from="1606991832803" duration="641000" />
+      <workItem from="1606996410542" duration="4325000" />
+      <workItem from="1607013459615" duration="7833000" />
     </task>
     <servers />
   </component>
@@ -227,16 +247,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1606621642235">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="-1234" y="219" key="FileChooserDialogImpl" timestamp="1607014974344">
+      <screen x="-1920" y="0" width="1920" height="1050" />
     </state>
+    <state x="-1234" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1607014974344" />
     <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606132646828" />
     <state x="2606" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605616921881" />
     <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606621642235" />
+    <state x="604" y="342" key="NewPhpFileDialog" timestamp="1606996425510">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606996425510" />
     <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605725282328">
       <screen x="-1920" y="0" width="1920" height="1042" />
     </state>
     <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.0.1920.1042/1920.0.1920.1050/0.0.1536.834@-1920.0.1920.1042" timestamp="1605725282328" />
+    <state x="-1159" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607015675188">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1159" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1607015675188" />
     <state x="-1059" y="240" key="run.anything.popup" timestamp="1606750787794">
       <screen x="-1920" y="0" width="1920" height="1050" />
     </state>

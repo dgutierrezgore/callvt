@@ -7,7 +7,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class AvisoDocumentoInterno extends Mailable
+class AvisoPostulacionRecibida extends Mailable
 {
     use Queueable, SerializesModels;
     protected $mailData;
@@ -20,14 +20,15 @@ class AvisoDocumentoInterno extends Mailable
     public function build()
     {
         $mailData = array(
-            'fechaBitDist' => $this->mailData['fecha'],
-            'materia' => $this->mailData['materia'],
-            'tipodoc' => $this->mailData['tipodoc'],
-            'numdoc' => $this->mailData['numdoc'],
-            'referencia' => $this->mailData['referencia']
+            'nombre' => $this->mailData['nombre'],
+            'nombrecompleto' => $this->mailData['nombrecompleto'],
+            'fono' => $this->mailData['fono'],
+            'correo' => $this->mailData['correo'],
+            'comuna' => $this->mailData['comuna'],
+            'obs' => $this->mailData['obs'],
         );
 
-        return $this->view('correos.avisodocint')
+        return $this->view('correos.avisopostrec')
             ->with([
                 'data' => $mailData
             ]);

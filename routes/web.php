@@ -21,6 +21,7 @@ Route::get('/trabajaconnosotros', 'VendedoresController@aspirantes');
 Route::get('/TrabajaConNosotros', 'VendedoresController@aspirantes');
 Route::post('/GuardarAspirante', 'VendedoresController@guardar_aspirantes');
 
+Route::get('/Hola', 'VendedoresController@hola');
 
 Route::group(['middleware' => 'auth'], function () {
 
