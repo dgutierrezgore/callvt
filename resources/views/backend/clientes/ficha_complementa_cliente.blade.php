@@ -576,23 +576,13 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Anexo 1</label>
+                                        <label for="inputEmail3" class="col-sm-1 control-label">Anexo</label>
                                         <div class="col-sm-2">
                                             <select class="form-control" name="anexo" id="anexo">
-                                                <option value="0">NO APLICA</option>
-                                            </select>
-                                        </div>
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Anexo 2</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control" name="anexo2" id="anexo2">
-                                                <option value="0">NO APLICA</option>
-                                            </select>
-                                        </div>
-
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Anexo 3</label>
-                                        <div class="col-sm-2">
-                                            <select class="form-control" name="anexo3" id="anexo3">
-                                                <option value="0">NO APLICA</option>
+                                                @foreach($anexos as $listado)
+                                                    <option
+                                                        value="{{ $listado->idanexdisp }}">{{ $listado->anexdisp }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -659,9 +649,11 @@
                                                 Entrante</label>
                                             <div class="col-sm-2">
                                                 <select class="form-control" name="fonoip1" id="fonoip1">
-                                                    <option value="7001">7001</option>
-                                                    <option value="7002">7002</option>
-                                                    <option value="7003">7003</option>
+                                                    @foreach($folio_int as $listado)
+                                                        <option
+                                                            value="{{ $listado->idfolioint }}">{{ $listado->numfolioint }}
+                                                            - {{ $listado->numexterno}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

@@ -31,22 +31,22 @@
                 </li>
             @endif
             @if(Auth::user()->estadous==1 || Auth::user()->estadous==4)
-                <li class="header">- OPCIONES DEL SISTEMA -</li>
+                <li class="header">- GERENCIA GENERAL -</li>
                 <li class="treeview">
                     <a href="#"><i class='fa fa-user-plus'></i> <span>Vendedores</span> <i
                             class="fa fa-angle-down pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="/Aspirantes"><i class="fa fa-user"></i> Ver Aspirantes</a></li>
                         <li><a href="/VendedorID"><i class="fa fa-user"></i> Asignar ID Vendedor</a></li>
+                        <li><a href="/VendedorGestion"><i class="fa fa-user"></i> Gestión Vendedor</a></li>
+                        <li><a href="/VendedorRep"><i class="fa fa-user"></i> Reportes del Vendedor</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
-                    <a href="#"><i class='fa fa-user'></i> <span>Personal General</span> <i
+                    <a href="#"><i class='fa fa-dollar'></i> <span>Ventas</span> <i
                             class="fa fa-angle-down pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="/CrearUsuario"><i class="fa fa-user"></i> Crear Personal</a></li>
-                        <li><a href="/VerUsuarios"><i class="fa fa-gears"></i> Gestión de Personal</a></li>
-                        <li><a href="/RepUsuario"><i class="fa fa-tasks"></i> Reporte por Persona</a></li>
+                        <li><a href="/PreVentasVT"><i class="fa fa-user"></i> Ver Preventas</a></li>
                     </ul>
                 </li>
             @endif

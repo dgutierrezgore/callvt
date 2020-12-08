@@ -16,15 +16,15 @@
                     <div class="panel-heading"><i class="fa fa-home"></i> Inicio</div>
 
                     <div class="panel-body">
-                        ¡Hola!, <strong>XXX</strong>, Bienvenido a
+                        ¡Hola!<strong></strong>, Bienvenido a
                         <strong>Oficina Virtual de Registros VTCALL System</strong>.
                     </div>
                 </div>
 
                 <div class="panel panel-warning">
                     <div class="panel-heading">
-                        <i class="fa fa-newspaper-o"></i> <strong>Cuadro Panel de Novedades al 21 de Octubre 2020</strong>
-                        <small>V.01</small>
+                        <i class="fa fa-newspaper-o"></i> <strong>Cuadro Panel de Novedades al 01 de Diciembre 2020</strong>
+                        <small>V.02</small>
                     </div>
 
                     <div class="panel-body">

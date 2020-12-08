@@ -70,7 +70,7 @@
                                                name="user_nacionalidad" value="CHILENA" onkeyup="mayusculas_x(this)"
                                                required>
                                     </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Fec. Nacimiento</label>
+                                    <label for="inputEmail3" class="col-sm-1 control-label">Fec. Nac.</label>
                                     <div class="col-sm-2">
                                         <input type="date" class="form-control" min="0" id="user_fecnac"
                                                name="user_fecnac" onkeyup="mayusculas_x(this)" required>
@@ -120,12 +120,12 @@
 
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-1 control-label">Villa</label>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <input type="text" class="form-control" min="0" id="user_villa"
                                                name="user_villa" onkeyup="my_villa(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Comuna</label>
-                                    <div class="col-sm-3">
+                                    <div class="col-sm-4">
                                         <select class="form-control" name="idcomuna">
                                             @foreach($regioncomuna as $listado)
                                                 <option
@@ -142,10 +142,10 @@
                                         <input type="number" class="form-control" min="0" id="user_ffijo"
                                                name="user_ffijo" onkeyup="mayusculas_x(this)" required>
                                     </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Celular</label>
+                                    <label for="inputEmail3" class="col-sm-1 control-label">Celular (+56 9)</label>
                                     <div class="col-sm-2">
                                         <input type="number" class="form-control" min="0" id="user_cel"
-                                               name="user_cel" onkeyup="mayusculas_x(this)" required>
+                                               name="user_cel" maxlength="8" onkeyup="mayusculas_x(this)" required>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-1 control-label">Mail Personal</label>
                                     <div class="col-sm-4">

@@ -267,7 +267,6 @@
                                                 class="fa fa-save"></i>
                                             Agregar Información Contrato
                                         </button>
-
                                     </div>
                                     <!-- /.box-footer -->
                                 </form>
@@ -294,7 +293,7 @@
                                            value="{{ $usuario->nombresus }} {{ $usuario->paternous }} {{ $usuario->maternous }}">
 
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Sucursal</label>
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Sucursal</label>
                                         <div class="col-sm-2">
                                             <select class="form-control" name="tipocontrato" id="tipocontrato">
                                                 <option value="1">CONCEPCIÓN</option>
@@ -303,27 +302,21 @@
                                             </select>
                                         </div>
 
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Correo
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Correo
                                             Institucional</label>
-                                        <div class="col-sm-2">
+                                        <div class="col-sm-3">
                                             <input class="form-control" name="mailins" id="mailins" type="email">
-                                        </div>
-
-                                        <label for="inputEmail3" class="col-sm-2 control-label">¿Crear Cuenta
-                                            VTCALL?</label>
-                                        <div class="col-sm-2">
-                                            <input type="checkbox" name="creacuenta" value="1"> SI
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Código
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Código
                                             Trabajador</label>
                                         <div class="col-sm-2">
                                             <input class="form-control" type="text" value="{{ $usuario->idusuario }}"
                                                    readonly>
                                         </div>
-                                        <label for="inputEmail3" class="col-sm-1 control-label">Foto
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Foto
                                             Trabajador</label>
                                         <div class="col-sm-4">
                                             <input class="form-control" type="file">

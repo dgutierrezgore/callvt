@@ -17,6 +17,10 @@ Route::get('/PanelVentas', 'VendedoresController@login');
 Route::post('/GuardarPreVenta', 'VendedoresController@guardar_preventa');
 Route::get('/GuardarPreVenta', 'VendedoresController@login');
 
+Route::get('/ContinuarVenta', 'VendedoresController@continuar_venta');
+Route::post('/NuevaVenta', 'VendedoresController@nueva_venta');
+
+
 Route::get('/trabajaconnosotros', 'VendedoresController@aspirantes');
 Route::get('/TrabajaConNosotros', 'VendedoresController@aspirantes');
 Route::post('/GuardarAspirante', 'VendedoresController@guardar_aspirantes');
@@ -33,6 +37,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/DescartarAspirante', 'VtCallController@descarta_postulante');
     Route::post('/CrearVendedor', 'VtCallController@crear_vendedor');
     Route::get('/VendedorID', 'VtCallController@id_vendedor');
+
+    Route::get('/PreVentasVT', 'VentasController@preventas');
 
 ///////////////
 ///

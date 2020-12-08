@@ -223,11 +223,18 @@ class VtCallController extends Controller
             ])
             ->get();
 
+        $suc_vtcall = DB::table('vtcall_tipo_cuenta')
+            ->where([
+                ['estadotipcuenta', 1]
+            ])
+            ->get();
+
         return view('backend.usuarios.ficha_complementa_usuario', [
             'usuario' => $usuario,
             'tipo_cta' => $tipos_cuenta,
             'bancos' => $bancos,
-            'contrato' => $contrato
+            'contrato' => $contrato,
+            'sucursal' => $suc_vtcall
         ]);
 
     }
@@ -521,6 +528,14 @@ class VtCallController extends Controller
             ])
             ->get();
 
+        $folio_int = DB::table('vtcall_folio_int')
+            ->where('estadofolioint', 1)
+            ->get();
+
+        $anexos = DB::table('vtcall_anexo_disp')
+            ->where('estadoanex', 1)
+            ->get();
+
         return view('backend.clientes.ficha_complementa_cliente', [
             'cliente' => $cliente,
             'replegales' => $rep_legales,
@@ -532,7 +547,9 @@ class VtCallController extends Controller
             'dfini' => $dfpago,
             'bancos' => $bancos,
             'tcuenta' => $tipos_cuenta,
-            'contactos' => $contactos
+            'contactos' => $contactos,
+            'folio_int' => $folio_int,
+            'anexos' =>$anexos
         ]);
     }
 
