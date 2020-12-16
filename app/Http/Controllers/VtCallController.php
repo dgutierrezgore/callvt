@@ -379,6 +379,57 @@ class VtCallController extends Controller
 
     }
 
+    public function gestion_vendedor()
+    {
+
+        $vende_hab = DB::table('vtcall_vendedores')
+            ->join('vtcall_usuarios', 'vtcall_usuarios.idvtcallusers', 'vtcall_vendedores.vtcall_usuarios_idvtcallusers')
+            ->where('estadovend', 1)
+            ->get();
+
+        $vende_deshab = DB::table('vtcall_vendedores')
+            ->join('vtcall_usuarios', 'vtcall_usuarios.idvtcallusers', 'vtcall_vendedores.vtcall_usuarios_idvtcallusers')
+            ->where('estadovend', 0)
+            ->get();
+
+        return view('backend.usuarios.listado_vendedores', [
+            'vendedores' => $vende_hab,
+            'vendedores_d' => $vende_deshab
+        ]);
+
+    }
+
+    public function deshabilitar_vendedor(Request $request)
+    {
+
+        DB::table('vtcall_vendedores')
+            ->where('idvendedoresvt', $request->idvend)
+            ->update([
+                'estadovend' => 0
+            ]);
+
+        return back();
+    }
+
+    public function habilitar_vendedor(Request $request)
+    {
+
+        DB::table('vtcall_vendedores')
+            ->where('idvendedoresvt', $request->idvend)
+            ->update([
+                'estadovend' => 1
+            ]);
+
+        return back();
+    }
+
+    public function reporte_vendedor(Request $request)
+    {
+
+        return view('backend.usuarios.reporte_vendedores');
+
+    }
+
     ////////////////////////////////////////////////////////////// OK
 
     public function nuevo_cliente()
@@ -549,7 +600,7 @@ class VtCallController extends Controller
             'tcuenta' => $tipos_cuenta,
             'contactos' => $contactos,
             'folio_int' => $folio_int,
-            'anexos' =>$anexos
+            'anexos' => $anexos
         ]);
     }
 

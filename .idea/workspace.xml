@@ -2,25 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/AvisoPreventaEmpresa.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/AvisoPreventaVendedor.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Mail/AvisoPreventaVirtualCALL.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/ventas/listadoprev.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/ventas/validarventas.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/correos/avisoprecontratacion.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/correos/avisopreventaemp.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/correos/avisopreventavendedor.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel2.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/listado_vendedores.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/reporte_vendedores.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_complementa_usuario.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_complementa_usuario.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_crea_usuario.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/ficha_crea_usuario.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/ventas/listadoprev.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/ventas/listadoprev.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel2.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -154,6 +147,10 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
       <path value="$PROJECT_DIR$/vendor/twilio/sdk" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpword" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/common" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-escaper" />
+      <path value="$PROJECT_DIR$/vendor/pclzip/pclzip" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jAbIAEnu5ZahhiZ7xPzVWlyFdI" />
@@ -165,7 +162,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Aplicativo Rendiciones/app/Http/Controllers/RendicionesController.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Escritorio/Ordenar/Informatica/app/Http/Controllers/GenerarWord.php" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -249,7 +246,13 @@
       <workItem from="1607041857793" duration="1529000" />
       <workItem from="1607277733500" duration="3040000" />
       <workItem from="1607367316025" duration="13341000" />
-      <workItem from="1607383264672" duration="5551000" />
+      <workItem from="1607383264672" duration="6146000" />
+      <workItem from="1607471302122" duration="3493000" />
+      <workItem from="1607480534322" duration="2986000" />
+      <workItem from="1607647632955" duration="6534000" />
+      <workItem from="1607882222509" duration="2560000" />
+      <workItem from="1607902986019" duration="54000" />
+      <workItem from="1608073471884" duration="7572000" />
     </task>
     <servers />
   </component>
@@ -261,18 +264,22 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="494" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1607371479830" />
-    <state x="-1234" y="219" key="FileChooserDialogImpl" timestamp="1607014974344">
-      <screen x="-1920" y="0" width="1920" height="1050" />
+    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608075631576">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1608075631576" />
+    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1607472642513">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-1234" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1607014974344" />
     <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606132646828" />
     <state x="2606" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605616921881" />
-    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1606621642235" />
-    <state x="604" y="342" key="NewPhpFileDialog" timestamp="1607371535205">
+    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607472642513" />
+    <state x="604" y="342" key="NewPhpFileDialog" timestamp="1608074372412">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606996425510" />
-    <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1607371535205" />
+    <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1608074372412" />
     <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605725282328">
       <screen x="-1920" y="0" width="1920" height="1042" />
     </state>

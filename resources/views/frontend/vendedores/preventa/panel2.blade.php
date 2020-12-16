@@ -90,6 +90,12 @@
                 <h5 class="mb-3">Notificación</h5>
                 VENTA O PREVENTA INGRESADA CON ÉXITO.
                 <hr>
+                <form action="/GenContratoVendedor" method="post">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="idpreve"
+                           value="{{ $id_prev }}">
+                    <button type="submit">DESCARGAR CONTRATO</button>
+                </form>
                 <br><br>
                 <center><small>VTCallSys V.01-C- Desarrolla <a href="mailto:contacto@danielgutierrez.cl">Daniel E.
                             Gutiérrez Fariña</a></small>

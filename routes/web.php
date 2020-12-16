@@ -20,29 +20,40 @@ Route::get('/GuardarPreVenta', 'VendedoresController@login');
 Route::get('/ContinuarVenta', 'VendedoresController@continuar_venta');
 Route::post('/NuevaVenta', 'VendedoresController@nueva_venta');
 
-
 Route::get('/trabajaconnosotros', 'VendedoresController@aspirantes');
 Route::get('/TrabajaConNosotros', 'VendedoresController@aspirantes');
 Route::post('/GuardarAspirante', 'VendedoresController@guardar_aspirantes');
 
+Route::post('/GenContratoVendedor', 'VendedoresController@generar_contrato');
+
 Route::get('/Hola', 'VendedoresController@hola');
+Route::get('/Word', 'VendedoresController@word');
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/home', 'HomeController@index');
     Route::get('/', 'HomeController@index');
 
+    ///////////////
+    ///
+    ///////////////
     Route::get('/Aspirantes', 'VtCallController@aspirantes');
     Route::post('/AceptarAspirante', 'VtCallController@acepta_postulante');
     Route::post('/DescartarAspirante', 'VtCallController@descarta_postulante');
     Route::post('/CrearVendedor', 'VtCallController@crear_vendedor');
     Route::get('/VendedorID', 'VtCallController@id_vendedor');
+    Route::get('/VendedorGestion', 'VtCallController@gestion_vendedor');
+    Route::post('/DesHabVend', 'VtCallController@deshabilitar_vendedor');
+    Route::post('/HabVend', 'VtCallController@habilitar_vendedor');
+    Route::get('/VendedorRep', 'VtCallController@reporte_vendedor');
+
 
     Route::get('/PreVentasVT', 'VentasController@preventas');
+    Route::post('/GenContrato', 'VentasController@generar_contrato');
 
-///////////////
-///
-///////////////
+    ///////////////
+    ///
+    ///////////////
     Route::get('/OperacionLlamada', 'VtCallController@operacion_llamada'); // Formulario de Operación de Llamadas
     Route::post('/TraerCliente', 'VtCallController@traer_datos_cliente'); // Trae Info del CLiente VTCALL
     Route::post('/TraerDatosNum', 'VtCallController@traer_datos_num_ex'); // Trae Info del Numero Externo

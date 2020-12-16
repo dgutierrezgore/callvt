@@ -43,15 +43,35 @@
                                         <th>TELÉFONO</th>
                                         <th>MAIL</th>
                                         <th>VENDEDOR</th>
+                                        <th>GENERAR CONTRATO</th>
                                     </tr>
                                     @foreach($preventas as $listado)
                                         <tr>
-                                            <td>{{ $listado->rutprev }}</td>
+                                            <td>
+                                                <form action="/FichaPreventa" method="post">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="idpreve"
+                                                           value="{{ $listado->idpreventas }}">
+                                                    <button class="btn btn-xs btn-success" type="submit"><i
+                                                            class="fa fa-file-pdf-o"></i> {{ $listado->rutprev }}
+                                                    </button>
+                                                </form>
+                                            </td>
                                             <td>{{ $listado->razonsocprev }}</td>
                                             <td>{{ $listado->nomcontprev }}</td>
                                             <td>+56 9 {{ $listado->celularprev }}</td>
                                             <td>{{ $listado->mailcontprev }}</td>
                                             <td>{{ $listado->nombrevend }}</td>
+                                            <td>
+                                                <form action="/GenContrato" method="post">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    <input type="hidden" name="idpreve"
+                                                           value="{{ $listado->idpreventas }}">
+                                                    <button class="btn btn-xs btn-success" type="submit"><i
+                                                            class="fa fa-file-word-o"></i> GENERAR CONTRATO
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
