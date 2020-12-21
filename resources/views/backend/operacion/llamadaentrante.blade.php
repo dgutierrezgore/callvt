@@ -84,7 +84,8 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO EXTERNO</label>
+                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO EXTERNO
+                                                +56 </label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoex"
                                                        name="fonoex" autocomplete="off" required>
@@ -273,6 +274,7 @@
     </div>
 
     <script>
+
     </script>
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <script>
@@ -459,9 +461,171 @@
 
             //ACCIONES DEL BOTON BUSQUEDA
             $('#traeinfo').click(function () {
+                var url = "TraerCliente";
+
+                if ($("#fonoip").val() == "") {
+                    $("#fonoip").css('border', '2px solid red');
+                    $('#alerta_tab').html("" +
+                        "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                        "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                        "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                        "Campo Fono IP es Obligatorio.\n" +
+                        "</div>");
+                    return;
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#form_traeinfo").serialize(),
+                    success: function (data) {
+                        if (data == 2) {
+                            $('#alerta_tab').html("" +
+                                "<div class=\"alert alert-danger alert-dismissable\">\n" +
+                                "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                                "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
+                                "No Encontrado\n" +
+                                "</div>").show();
+                            $('#contestacion').hide();
+                            $('#infoextra').hide();
+                            $('#contacto').hide();
+                            $('#contacto2').hide();
+                            $('#contacto3').hide();
+                            $('#btn_llamada_ent').hide();
+                            $('#btn_dos').hide();
+                            $("#encontrado").val(0);
+                        } else {
+                            llamada = data[0].fomcontllamada;
+                            infoextra = data[0].infoextra;
+
+
+                            contactos1 = data[0].nombrescont + ' ' + data[0].paternocont + ' ' + data[0].maternocont;
+                            contactos1b = data[0].celcont + ' ' + data[0].mailcont;
+
+                            if (data[0].contactosac == 2) {
+                                contactos2 = data[1].nombrescont + ' ' + data[1].paternocont + ' ' + data[1].maternocont;
+                                contactos2b = data[1].celcont + ' ' + data[1].mailcont;
+                            } else if (data[0].contactosac == 3) {
+                                contactos2 = data[1].nombrescont + ' ' + data[1].paternocont + ' ' + data[1].maternocont;
+                                contactos2b = data[1].celcont + ' ' + data[1].mailcont;
+                                contactos3 = data[2].nombrescont + ' ' + data[2].paternocont + ' ' + data[2].maternocont;
+                                contactos3b = data[2].celcont + ' ' + data[2].mailcont;
+                            }
+                            $('#alerta_tab').hide();
+                            $('#btn_llamada_ent').show();
+                            $('#btn_dos').show();
+                            $("#encontrado").val(1);
+                            $('#contestacion').html("" +
+                                "<div class=\"alert alert-success\">\n" +
+                                "<h4><i class=\"icon fa fa-bullhorn\"></i> Contestación!</h4>" +
+                                llamada +
+                                "</div>").show();
+
+                            $('#infoextra').html("" +
+                                "<div class=\"alert alert-success\">\n" +
+                                "<h4><i class=\"icon fa fa-spinner\"></i> Información Extra!</h4>" +
+                                infoextra +
+                                "</div>").show();
+
+                            $('#contacto').html("" +
+                                "<div class=\"alert alert-success\">\n" +
+                                "<h4><i class=\"icon fa fa-user\"></i> Contacto 1! Anexo: " + data[0].anex1cont
+                                + "</h4>" +
+                                contactos1 + "<br>" + contactos1b +
+                                "</div>"
+                            ).show();
+                            if (data[0].contactosac <= 3) {
+                                $('#contacto2').html("" +
+                                    "<div class=\"alert alert-success\">\n" +
+                                    "<h4><i class=\"icon fa fa-user\"></i> Contacto 2!</h4>" +
+                                    contactos2 + "<br>" + contactos2b +
+                                    "</div>").show();
+                                $('#contacto3').html("" +
+                                    "<div class=\"alert alert-success\">\n" +
+                                    "<h4><i class=\"icon fa fa-user\"></i> Contacto 3!</h4>" +
+                                    contactos3 + "<br>" + contactos3b +
+                                    "</div>").show();
+                            }
+                        }
+                    },
+                    error: function (data) {
+                        alert(data);
+                        alert('ERROR');
+                    }
+                });
             });
             $('#traeinfoext').click(function () {
+                if (($("#encontrado").val()) == 0) {
+                    return false;
+                } else {
+                    var url = "TraerDatosNum";
 
+                    if ($("#fonoex").val() == "") {
+                        $("#fonoex").css('border', '2px solid red');
+                        $('#alerta_tab2').html("" +
+                            "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                            "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                            "<h4><i class=\"icon fa fa-info\"></i> Alerta de Sistema!</h4>" +
+                            "Campo Fono Externo es Obligatorio.\n" +
+                            "</div>");
+                        return;
+                    }
+
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $("#form_llamada").serialize(),
+                        success: function (data) {
+                            if (data == 2) {
+                                $('#alerta_tab2').html("" +
+                                    "<div class=\"alert alert-warning alert-dismissable\">\n" +
+                                    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                                    "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
+                                    "No Encontrado en BD, se debe agregar ahora\n" +
+                                    "</div>").show();
+                                $("#nombreex").val('');
+                                $("#empresaex").val('');
+                                $("#fonsecex").val('');
+                                $("#mailex").val('');
+                                $('#btn_dos').show();
+                                $("#hiddenfonox").val($("#fonoex").val());
+                                $("#hiddenfonocli").val($("#fonoip").val());
+                                var today = new Date();
+                                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                                var dateTime = date + ' ' + time;
+
+
+                                $("#hiddenfectoma").val(dateTime); /////////////PENDIENTE
+                            } else {
+                                $('#alerta_tab2').html("" +
+                                    "<div class=\"alert alert-success alert-dismissable\">\n" +
+                                    "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>" +
+                                    "<h4><i class=\"icon fa fa-warning\"></i> Mensaje de Sistema!</h4>" +
+                                    "Encontrado en BD, puede actualizar campos\n" +
+                                    "</div>").show();
+                                $('#btn_dos').show();
+                                $("#hiddenfonox").val($("#fonoex").val());
+                                $("#hiddenfonocli").val($("#fonoip").val());
+
+                                var today = new Date();
+                                var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+                                var dateTime = date + ' ' + time;
+
+                                $("#hiddenfectoma").val(dateTime); /////////////PENDIENTE
+                                $("#nombreex").val(data[0].nombreext);
+                                $("#empresaex").val(data[0].empresaext);
+                                $("#fonsecex").val(data[0].fonosecext);
+                                $("#mailex").val(data[0].mailext);
+                            }
+                        },
+                        error: function (data) {
+                            alert(data);
+                            alert('ERROR');
+                        }
+                    });
+                }
             });
 
             //FORMULARIO FINAL
