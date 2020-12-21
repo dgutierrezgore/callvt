@@ -50,6 +50,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/PreVentasVT', 'VentasController@preventas');
     Route::post('/GenContrato', 'VentasController@generar_contrato');
+    Route::post('/FichaPreventa', 'VentasController@ficha_preventa');
+    Route::post('/ConfirmarDatosPreventa', 'VentasController@confirmar_datosprev');
+    Route::post('/VentaCliente','VentasController@confirmar_venta');
+    Route::post('/EliminarPreventa','VentasController@eliminar_venta');
 
     ///////////////
     ///

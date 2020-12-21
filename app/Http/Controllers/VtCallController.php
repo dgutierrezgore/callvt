@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Ajaxray\PHPWatermark\Watermark;
+use App\Mail\AvisoMensajeOperadora;
 use Illuminate\Http\Request;
 use DB;
 use Illuminate\Support\Facades\Mail;
@@ -848,6 +849,59 @@ class VtCallController extends Controller
             'vtcall_clientes_idclientes' => $idcliente->idclientes,
             'vtcall_externos_idvtcallext' => $idexterno->idvtcallext,
         ]);
+
+        $nombre_cli = DB::table('vtcall_clientes')
+            ->where('idclientes', $idcliente->idclientes)
+            ->pluck('razonsoccliente');
+
+        $mail_cli = DB::table('vtcall_clientes')
+            ->where('idclientes', $idcliente->idclientes)
+            ->pluck('mailnotif');
+
+        if ($request->deriva == 1) {
+            $der = 'SE DERIVA AL ANEXO';
+        } elseif ($request->deriva == 2) {
+            $der = 'SE DERIVA AL CELULAR';
+        } else {
+            $der = 'SE TOMA EL RECADO';
+        }
+
+        if ($request->ac1 == null) {
+            $ac1 = 'NO';
+        } else {
+            $ac1 = 'SI';
+        }
+
+        if ($request->ac2 == null) {
+            $ac2 = 'NO';
+        } else {
+            $ac2 = 'SI';
+        }
+
+        if ($request->ac3 == null) {
+            $ac3 = 'NO';
+        } else {
+            $ac3 = 'SI';
+        }
+
+        $data_correo = array(
+            'nombre_cli' => $nombre_cli,
+            'nombre' => $request->nombreex,
+            'empresa' => $request->empresaex,
+            'fono_princ' => $request->fonoex,
+            'fono_secun' => $request->fonsecex,
+            'correo_elec' => $request->mailex,
+            'mensaje' => $request->motiex,
+            'acc_rapida1' => $ac1,
+            'acc_rapida2' => $ac2,
+            'acc_rapida3' => $ac3,
+            'derivacion' => $der,
+        );
+
+        Mail::to($mail_cli)
+            //Mail::to('soporte@virtualcall.cl')
+            ->bcc('soporte@virtualcall.cl')
+            ->send(new AvisoMensajeOperadora($data_correo));
 
         echo 1;
 

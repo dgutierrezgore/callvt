@@ -88,7 +88,24 @@
                             <div class="box-body no-padding">
                                 <table class="table table-striped">
                                     <tbody>
-
+                                    <tr>
+                                        <th>RUN</th>
+                                        <th>RAZÓN SOCIAL</th>
+                                        <th>NOMBRE CONTACTO</th>
+                                        <th>TELÉFONO</th>
+                                        <th>MAIL</th>
+                                        <th>VENDEDOR</th>
+                                    </tr>
+                                    @foreach($prev_rec as $listado)
+                                        <tr>
+                                            <td>{{ $listado->rutprev }}</td>
+                                            <td>{{ $listado->razonsocprev }}</td>
+                                            <td>{{ $listado->nomcontprev }}</td>
+                                            <td>+56 9 {{ $listado->celularprev }}</td>
+                                            <td>{{ $listado->mailcontprev }}</td>
+                                            <td>{{ $listado->nombrevend }}</td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -102,7 +119,24 @@
                             <div class="box-body no-padding">
                                 <table class="table table-striped">
                                     <tbody>
-
+                                    <tr>
+                                        <th>RUN</th>
+                                        <th>RAZÓN SOCIAL</th>
+                                        <th>NOMBRE CONTACTO</th>
+                                        <th>TELÉFONO</th>
+                                        <th>MAIL</th>
+                                        <th>VENDEDOR</th>
+                                    </tr>
+                                    @foreach($prev_acep as $listado)
+                                        <tr>
+                                            <td>{{ $listado->rutprev }}</td>
+                                            <td>{{ $listado->razonsocprev }}</td>
+                                            <td>{{ $listado->nomcontprev }}</td>
+                                            <td>+56 9 {{ $listado->celularprev }}</td>
+                                            <td>{{ $listado->mailcontprev }}</td>
+                                            <td>{{ $listado->nombrevend }}</td>
+                                        </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

@@ -27,7 +27,7 @@
                                     AVISO MENSAJE RECIBIDO POR OPERADORA
                                 </h1><br>
                             </center>
-                            <p><strong>¡HOLA!, [NOMBRE EMPRESA].</strong> <br><br>
+                            <p><strong>¡HOLA!, {{ $data['nombre_cli'] }}.</strong> <br><br>
                                 Queremos informarte que hemos recibido un llamado a la línea contratada y hemos tomado
                                 el recado para tí.
                             </p>
@@ -44,17 +44,33 @@
                 </tr>
                 <tr>
                     <td><h3>NOMBRE / EMPRESA:</h3>
-                        <p>[NOMBRE EXTERNO] <br>
-                            [NOMBRE EMPRESA EXTERNO]
+                        <p>{{ $data['nombre'] }} <br>
+                            {{ $data['empresa'] }}
                         </p>
                     </td>
-                    <td colspan="2"><h3>FONO - CORREO Y ACCIÓN A EJECUTAR:</h3>
-                        <p>[FONO] [CORREO] [ACCIÓN A EJECUTAR]</p>
+                    <td colspan="2"><h3>FONO - FONO SECUNDARIO - CORREO Y ACCIÓN A EJECUTAR:</h3>
+                        <p>{{ $data['fono_princ'] }} - {{ $data['fono_secun'] }} - {{ $data['correo_elec'] }}
+                            - {{ $data['derivacion'] }}</p>
                     </td>
                 </tr>
                 <tr>
+                    <td colspan="3">
+                        <h3>
+                            ACCIONES RÁPIDAS
+                        </h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DEVOLVER LLAMADO: {{ $data['acc_rapida1'] }}</td>
+                    <td>LLAMARÁ MAS TARDE: {{ $data['acc_rapida2'] }}</td>
+                    <td>ES URGENTE: {{ $data['acc_rapida3'] }}</td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+                <tr>
                     <td colspan="3"><h3>MENSAJE DEL CONTACTO:</h3>
-                        <p>[MENSAJE]</p>
+                        <p>{{ $data['mensaje'] }}</p>
                     </td>
                 </tr>
                 <br><br>

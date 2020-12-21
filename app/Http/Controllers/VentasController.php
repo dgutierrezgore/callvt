@@ -23,10 +23,23 @@ class VentasController extends Controller
 
         $preventas = DB::table('vtcall_preventas')
             ->join('vtcall_vendedores', 'vtcall_vendedores.idvendedoresvt', 'vtcall_preventas.vtcall_vendedores_idvendedoresvt')
+            ->where('estadopreve', '<', 3)
+            ->get();
+
+        $prev_acep = DB::table('vtcall_preventas')
+            ->join('vtcall_vendedores', 'vtcall_vendedores.idvendedoresvt', 'vtcall_preventas.vtcall_vendedores_idvendedoresvt')
+            ->where('estadopreve', 3)
+            ->get();
+
+        $prev_rec = DB::table('vtcall_preventas')
+            ->join('vtcall_vendedores', 'vtcall_vendedores.idvendedoresvt', 'vtcall_preventas.vtcall_vendedores_idvendedoresvt')
+            ->where('estadopreve', 4)
             ->get();
 
         return view('backend.ventas.listadoprev', [
-            'preventas' => $preventas
+            'preventas' => $preventas,
+            'prev_acep' => $prev_acep,
+            'prev_rec' => $prev_rec
         ]);
 
     }
@@ -786,6 +799,102 @@ class VentasController extends Controller
         $objWriter->save('php://output');
 
 
+    }
+
+    public function ficha_preventa(Request $request)
+    {
+
+        $id_prev = $request->idpreve;
+
+        $fic_prev = DB::table('vtcall_preventas')
+            ->join('vtcall_planes', 'vtcall_planes.idplanes', 'vtcall_preventas.vtcall_planes_idplanes')
+            ->join('vtcall_comunas', 'vtcall_comunas.idvtcall_comunas', 'vtcall_preventas.vtcall_comunas_idvtcall_comunas')
+            ->join('vtcall_vendedores', 'vtcall_vendedores.idvendedoresvt', 'vtcall_preventas.vtcall_vendedores_idvendedoresvt')
+            ->where('idpreventas', $id_prev)
+            ->first();
+
+        $anexos_plan = DB::table('vtcall_prev_adic')
+            ->join('vtcall_adicionales', 'vtcall_adicionales.idadicionales', 'vtcall_prev_adic.vtcall_adicionales_idadicionales')
+            ->where('vtcall_preventas_idpreventas', $id_prev)
+            ->get();
+
+        return view('backend.ventas.fichapreventa', [
+            'fic_prev' => $fic_prev,
+            'anex_plan' => $anexos_plan
+        ]);
+
+    }
+
+    public function confirmar_datosprev(Request $request)
+    {
+
+        DB::table('vtcall_preventas')
+            ->where('idpreventas', $request->idprev)
+            ->update([
+                'razonsocprev' => $request->rsocemp,
+                'mailcontprev' => $request->mail,
+                'celularprev' => $request->celular,
+                'patrepleg' => $request->apat,
+                'matrepleg' => $request->amat,
+                'nomrepleg' => $request->nombres,
+                'estadopreve' => 2,
+            ]);
+
+        return $this->preventas();
+    }
+
+    public function confirmar_venta(Request $request)
+    {
+        $prev = DB::table('vtcall_preventas')
+            ->where('vtcall_preventas.idpreventas', $request->idprev)
+            ->first();
+
+        //// CREAR CLIENTE
+
+        $id_cli = DB::table('vtcall_clientes')->insertGetId([
+            'rutcliente' => $prev->rutprev,
+            'razonsoccliente' => $prev->razonsocprev,
+            'fonocliente' => $prev->celularprev,
+            'mailnotif' => $prev->mailcontprev,
+            'avancepl1' => 1,
+            'vtcall_comunas_idvtcall_comunas' => $prev->vtcall_comunas_idvtcall_comunas,
+        ]);
+
+
+        DB::table('vtcall_rep_legal')->insert([
+            'rutreplegal' => $prev->runrepleg,
+            'apaternorlegal' => $prev->patrepleg,
+            'amaternorlegal' => $prev->matrepleg,
+            'nombresrlegal' => $prev->nomrepleg,
+            'nacionalidadrlegal' => $prev->nacrepleg,
+            'celrlegal' => $prev->celrepleg,
+            'estadoreplegal' => 1,
+            'ecivilrep' => null,
+            'uniqrlegemp' => $prev->runrepleg . '-' . $id_cli,
+            'vtcall_clientes_idclientes' => $id_cli,
+        ]);
+
+        dd($id_cli);
+
+        DB::table('vtcall_preventas')
+            ->where('idpreventas', $request->idprev)
+            ->update([
+                'estadopreve' => 3,
+            ]);
+
+        return $this->preventas();
+    }
+
+    public function eliminar_venta(Request $request)
+    {
+
+        DB::table('vtcall_preventas')
+            ->where('idpreventas', $request->idprev)
+            ->update([
+                'estadopreve' => 4,
+            ]);
+
+        return $this->preventas();
     }
 
 }

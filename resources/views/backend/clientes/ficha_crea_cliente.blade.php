@@ -30,98 +30,6 @@
 
                 <div class="tab-content">
                     <div class="active tab-pane" id="datos_principales">
-
-                        <form class="form-horizontal" name="form1" id="form_datos_principales">
-                            <div class="box-body">
-                                <div id="alerta_tab">
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-1 control-label">RUT
-                                        Empresa</label>
-                                    <div class="col-sm-3">
-                                        <input type="text" class="form-control" min="0" id="idrut_emp"
-                                               name="rut" onfocusout="validaRut(document.form1.rut.value)"
-                                               required>
-                                    </div>
-
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Razón
-                                        Social</label>
-                                    <div class="col-sm-6">
-                                        <input type="text" class="form-control" min="0" id="rsoc_emp"
-                                               name="rsoc_emp" onkeyup="mayusculas_rs(this)" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Giro(s)</label>
-                                    <div class="col-sm-10">
-                                    <textarea class="form-control" id="giro_emp" name="giro_emp" rows="2"
-                                              onkeyup="mayusculas_g(this)" required></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Calle</label>
-                                    <div class="col-sm-4">
-                                        <input type="text" class="form-control" min="0" id="calle_emp"
-                                               name="calle_emp" onkeyup="mayusculas_c(this)" required>
-                                    </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Número</label>
-                                    <div class="col-sm-2">
-                                        <input type="number" class="form-control" min="0" id="num_call_emp"
-                                               name="num_call_emp" onkeyup="mayusculas_n(this)" required>
-                                    </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Block</label>
-                                    <div class="col-sm-2">
-                                        <input type="text" class="form-control" min="0" id="block_call_emp"
-                                               name="block_call_emp" onkeyup="mayusculas_b(this)">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Comuna</label>
-                                    <div class="col-sm-3">
-                                        <select class="form-control" name="idcomuna">
-                                            @foreach($regioncomuna as $listado)
-                                                <option
-                                                    value="{{$listado->idvtcall_comunas}}">{{ $listado->nombreregion }}
-                                                    - {{ $listado->nombrecomuna }}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Fono</label>
-                                    <div class="col-sm-2">
-                                        <input type="number" class="form-control" min="0" id="fono_emp"
-                                               name="fono_emp" required>
-                                    </div>
-                                    <label for="inputEmail3" class="col-sm-1 control-label">Sitio
-                                        Web</label>
-                                    <div class="col-sm-3">
-                                        <input type="url" class="form-control" min="0" id="web_emp"
-                                               name="web_emp" onkeyup="mayusculas_sw(this)">
-                                    </div>
-                                </div>
-                            </div>
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <!-- /.box-body -->
-                            <div class="box-footer">
-                                <button type="reset" class="btn btn-default"><i class="fa fa-eraser"></i>
-                                    Limpiar
-                                    Formulario
-                                </button>
-
-                                <button type="button" class="btn btn-success pull-right"
-                                        id="btn_crea_empresa">
-                                    <i
-                                        class="fa fa-save"></i>
-                                    Guardar Información
-                                </button>
-
-                            </div>
-                            <!-- /.box-footer -->
-                        </form>
-                        <hr>
                         <div class="box">
                             <div class="box-header">
                                 <h3 class="box-title">Mis Últimos 5 Ingresos</h3>
@@ -134,7 +42,6 @@
                                         <th style="width: 10px">Acción</th>
                                         <th>Rut Cliente</th>
                                         <th>Razón Social</th>
-                                        <th style="width: 40px">Avance</th>
                                     </tr>
                                     @foreach($u_5_c as $listado)
                                         <tr>
@@ -150,9 +57,6 @@
                                             </td>
                                             <td>{{ $listado->rutcliente }}</td>
                                             <td>{{ $listado->razonsoccliente }}</td>
-                                            <td>
-
-                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>

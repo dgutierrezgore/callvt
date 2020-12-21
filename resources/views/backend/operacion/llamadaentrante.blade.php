@@ -41,7 +41,8 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FOLIO INTERNO</label>
+                                            <label for="inputEmail3" class="col-sm-3 control-label">FOLIO
+                                                INTERNO</label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoip"
                                                        name="fonoip" autocomplete="off" required>
@@ -322,6 +323,7 @@
                                 llamada = data[0].fomcontllamada;
                                 infoextra = data[0].infoextra;
 
+
                                 contactos1 = data[0].nombrescont + ' ' + data[0].paternocont + ' ' + data[0].maternocont;
                                 contactos1b = data[0].celcont + ' ' + data[0].mailcont;
 
@@ -352,9 +354,11 @@
 
                                 $('#contacto').html("" +
                                     "<div class=\"alert alert-success\">\n" +
-                                    "<h4><i class=\"icon fa fa-user\"></i> Contacto 1!</h4>" +
+                                    "<h4><i class=\"icon fa fa-user\"></i> Contacto 1! Anexo: " + data[0].anex1cont
+                                    + "</h4>" +
                                     contactos1 + "<br>" + contactos1b +
-                                    "</div>").show();
+                                    "</div>"
+                                ).show();
                                 if (data[0].contactosac <= 3) {
                                     $('#contacto2').html("" +
                                         "<div class=\"alert alert-success\">\n" +

@@ -581,7 +581,7 @@
                                             <select class="form-control" name="anexo" id="anexo">
                                                 @foreach($anexos as $listado)
                                                     <option
-                                                        value="{{ $listado->idanexdisp }}">{{ $listado->anexdisp }}</option>
+                                                        value="{{ $listado->anexdisp }}">{{ $listado->anexdisp }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

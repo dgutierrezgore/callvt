@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/listado_vendedores.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/usuarios/reporte_vendedores.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Aplicativo VTCALL.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/ventas/fichapreventa.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VendedoresController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/AvisoReEnvioDocumentoInterno.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_crea_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_crea_cliente.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/ventas/listadoprev.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/ventas/listadoprev.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel2.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/vendedores/preventa/panel2.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/ventas/validarventas.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/AvisoMensajeOperadora.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +161,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Escritorio/Ordenar/Informatica/app/Http/Controllers/GenerarWord.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -252,7 +251,9 @@
       <workItem from="1607647632955" duration="6534000" />
       <workItem from="1607882222509" duration="2560000" />
       <workItem from="1607902986019" duration="54000" />
-      <workItem from="1608073471884" duration="7572000" />
+      <workItem from="1608073471884" duration="7935000" />
+      <workItem from="1608132532831" duration="7000" />
+      <workItem from="1608495801343" duration="14189000" />
     </task>
     <servers />
   </component>
@@ -264,10 +265,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="494" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1607371479830" />
-    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608075631576">
+    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608508086212">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1608075631576" />
+    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1608508086212" />
     <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1607472642513">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
