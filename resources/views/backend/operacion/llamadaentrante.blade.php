@@ -115,21 +115,21 @@
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Nombre:</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" min="0" id="nombreex"
-                                                           name="nombreex" required>
+                                                           name="nombreex" style="text-transform:uppercase;" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Empresa:</label>
                                                 <div class="col-sm-8">
                                                     <input type="text" class="form-control" min="0" id="empresaex"
-                                                           name="empresaex" required>
+                                                           name="empresaex" style="text-transform:uppercase;" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Fono
-                                                    Secundario:</label>
+                                                    Secundario: +56</label>
                                                 <div class="col-sm-8">
-                                                    <input type="text" class="form-control" min="0" id="fonsecex"
+                                                    <input type="number" class="form-control" min="0" id="fonsecex"
                                                            name="fonsecex" required>
                                                 </div>
                                             </div>
@@ -138,7 +138,7 @@
                                                     Electrónico:</label>
                                                 <div class="col-sm-8">
                                                     <input type="mail" class="form-control" min="0" id="mailex"
-                                                           name="mailex" required>
+                                                           name="mailex" style="text-transform:uppercase;" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -146,7 +146,7 @@
                                                     Llamada:</label>
                                                 <div class="col-sm-8">
                                                     <textarea class="form-control" id="motiex" name="motiex" rows="2"
-                                                              required></textarea>
+                                                              style="text-transform:uppercase;"  required></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">

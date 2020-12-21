@@ -885,13 +885,13 @@ class VtCallController extends Controller
         }
 
         $data_correo = array(
-            'nombre_cli' => $nombre_cli,
-            'nombre' => $request->nombreex,
-            'empresa' => $request->empresaex,
+            'nombre_cli' => strtoupper($nombre_cli),
+            'nombre' => strtoupper($request->nombreex),
+            'empresa' => strtoupper($request->empresaex),
             'fono_princ' => $request->fonoex,
             'fono_secun' => $request->fonsecex,
-            'correo_elec' => $request->mailex,
-            'mensaje' => $request->motiex,
+            'correo_elec' => strtoupper($request->mailex),
+            'mensaje' => strtoupper($request->motiex),
             'acc_rapida1' => $ac1,
             'acc_rapida2' => $ac2,
             'acc_rapida3' => $ac3,

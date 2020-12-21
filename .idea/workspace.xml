@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +244,8 @@
       <workItem from="1607902986019" duration="54000" />
       <workItem from="1608073471884" duration="7935000" />
       <workItem from="1608132532831" duration="7000" />
-      <workItem from="1608495801343" duration="15503000" />
+      <workItem from="1608495801343" duration="15563000" />
+      <workItem from="1608513154975" duration="390000" />
     </task>
     <servers />
   </component>
