@@ -24,10 +24,7 @@
             <div class="nav-tabs-custom">
                 <ul class="nav nav-tabs">
                     <li class="active"><a href="#inicio" data-toggle="tab"><i class="fa fa-phone"></i>
-                            Operación General de Llamadas Entrante</a>
-                    </li>
-                    <li><a href="#vendedores" data-toggle="tab"><i class="fa fa-users"></i>
-                            Vendedores VT CALL</a>
+                            Operación de Llamadas Entrante</a>
                     </li>
                 </ul>
 
@@ -41,8 +38,8 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FOLIO
-                                                INTERNO</label>
+                                            <label for="inputEmail3" class="col-sm-3 control-label">ID
+                                                ENTRANTE</label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoip"
                                                        name="fonoip" autocomplete="off" required>
@@ -84,7 +81,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputEmail3" class="col-sm-3 control-label">FONO EXTERNO
+                                            <label for="inputEmail3" class="col-sm-3 control-label">N° EXTERNO
                                                 +56 </label>
                                             <div class="col-sm-5">
                                                 <input type="text" class="form-control" min="0" id="fonoex"
@@ -126,7 +123,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Fono
+                                                <label for="inputEmail3" class="col-sm-3 control-label">N°
                                                     Secundario: +56</label>
                                                 <div class="col-sm-8">
                                                     <input type="number" class="form-control" min="0" id="fonsecex"
@@ -134,34 +131,48 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Correo
-                                                    Electrónico:</label>
+                                                <label for="inputEmail3" class="col-sm-3 control-label">e-Mail:</label>
                                                 <div class="col-sm-8">
                                                     <input type="mail" class="form-control" min="0" id="mailex"
                                                            name="mailex" style="text-transform:uppercase;" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Mensaje
-                                                    Llamada:</label>
+                                                <label for="inputEmail3" class="col-sm-3 control-label">Recado:</label>
                                                 <div class="col-sm-8">
                                                     <textarea class="form-control" id="motiex" name="motiex" rows="2"
                                                               style="text-transform:uppercase;"  required></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-3 control-label">Acción
-                                                    Rápida</label>
+                                                <label for="inputEmail3"
+                                                       class="col-sm-3 control-label">Agenda</label>
+                                                <div class="radio col-sm-3">
+                                                    <label>
+                                                        <input type="radio" name="agenda" value="0"
+                                                               checked="">
+                                                        <i class="fa fa-calendar-minus-o"></i> No Agenda
+                                                    </label>
+                                                </div>
+                                                <div class="radio col-sm-3">
+                                                    <label>
+                                                        <input type="radio" name="agenda" value="1">
+                                                        <i class="fa fa-calendar-check-o"></i> Si Agenda
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-3 control-label">Opciones</label>
                                                 <div class="radio col-sm-3">
                                                     <label>
                                                         <input type="checkbox" name="ac1" value="1">
-                                                        <i class="fa fa-mobile-phone"></i> Devolver Llamado
+                                                        <i class="fa fa-mobile-phone"></i> Devolver LLam
                                                     </label>
                                                 </div>
                                                 <div class="radio col-sm-3">
                                                     <label>
                                                         <input type="checkbox" name="ac2" value="1">
-                                                        <i class="fa fa-times"></i> Llamará mas Tarde
+                                                        <i class="fa fa-times"></i> Llam mas Tarde
                                                     </label>
                                                 </div>
                                                 <div class="radio col-sm-3">
@@ -209,43 +220,6 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane" id="vendedores">
-
-                        <div class="box">
-                            <div class="box-header">
-                                <h3 class="box-title">Grilla de todos los vendedores VirtualCALL habilitados</h3>
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <div id="example1_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <table id="GrillaPrincipal" class="table table-bordered table-hover">
-                                                <thead>
-                                                <tr>
-                                                    <th>Nombre</th>
-                                                    <th>Teléfono Celular</th>
-                                                    <th>Correo Electrónico</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                @foreach($vendedores as $listado)
-                                                    <tr>
-                                                        <td>{{ $listado->nombrevend }}</td>
-                                                        <td>+56 9 {{ $listado->celus }}</td>
-                                                        <td>{{ $listado->mailpus }}</td>
-                                                    </tr>
-                                                @endforeach
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-
-                    </div>
                 </div>
 
                 <!-- /.tab-content -->

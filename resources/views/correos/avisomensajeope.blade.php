@@ -14,7 +14,7 @@
                    style="border: 0px solid #cccccc; border-collapse: collapse;">
                 <tr>
                     <td align="center"
-                        style="padding: 40px 0 30px 0; color: #fffcf9; font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;"
+                        style="padding: 40px 0 30px 0; color: #1f1f1f; font-size: 20px; font-weight: bold; font-family: Arial, sans-serif;"
                         colspan="3">
                         <img src="http://virtualcall.cl/img/bannervc.jpg" alt="">
                     </td>
@@ -38,41 +38,93 @@
                 <tr>
                     <td colspan="3">
                         <h3>
-                            DETALLES DE LA LLAMADA
+                            DETALLE DE LA LLAMADA
                         </h3>
                     </td>
                 </tr>
                 <tr>
-                    <td><h3>NOMBRE / EMPRESA:</h3>
-                        <p>{{ $data['nombre'] }} <br>
-                            {{ $data['empresa'] }}
-                        </p>
-                    </td>
-                    <td colspan="2"><h3>FONO - FONO SECUNDARIO - CORREO Y ACCIÓN A EJECUTAR:</h3>
-                        <p>{{ $data['fono_princ'] }} - {{ $data['fono_secun'] }} - {{ $data['correo_elec'] }}
-                            - {{ $data['derivacion'] }}</p>
-                    </td>
+                    <td style="width: 140px">Fecha</td>
+                    <td style="width: 15px">:</td>
+                    <td>{{ date('d-m-Y') }}</td>
                 </tr>
+                <tr>
+                    <td>Hora</td>
+                    <td>:</td>
+                    <td>{{ date('H:i:s') }}</td>
+                </tr>
+                <tr>
+                    <td>Nombre</td>
+                    <td>:</td>
+                    <td>{{ $data['nombre'] }}</td>
+                </tr>
+                <tr>
+                    <td>Empresa</td>
+                    <td>:</td>
+                    <td>{{ $data['empresa'] }}</td>
+                </tr>
+                <tr>
+                    <td>Fono 1</td>
+                    <td>:</td>
+                    <td>{{ $data['fono_princ'] }}</td>
+                </tr>
+                <tr>
+                    <td>Fono 2</td>
+                    <td>:</td>
+                    <td>{{ $data['fono_secun'] }}</td>
+                </tr>
+
+                <tr>
+                    <td>Correo Electrónico</td>
+                    <td>:</td>
+                    <td>{{ $data['correo_elec'] }}</td>
+                </tr>
+
                 <tr>
                     <td colspan="3">
                         <h3>
-                            ACCIONES RÁPIDAS
+                            INFORMACIÓN
                         </h3>
                     </td>
                 </tr>
+
                 <tr>
-                    <td>DEVOLVER LLAMADO: {{ $data['acc_rapida1'] }}</td>
-                    <td>LLAMARÁ MAS TARDE: {{ $data['acc_rapida2'] }}</td>
-                    <td>ES URGENTE: {{ $data['acc_rapida3'] }}</td>
+                    <td>Se deriva Llamada</td>
+                    <td>:</td>
+                    <td>{{ $data['derivacion'] }}</td>
+                </tr>
+
+                <tr>
+                    <td>Devolver Llamado</td>
+                    <td>:</td>
+                    <td>{{ $data['acc_rapida1'] }}</td>
+                </tr>
+
+                <tr>
+                    <td>Llamará mas tarde</td>
+                    <td>:</td>
+                    <td>{{ $data['acc_rapida2'] }}</td>
+                </tr>
+
+                <tr>
+                    <td>Es Urgente</td>
+                    <td>:</td>
+                    <td>{{ $data['acc_rapida3'] }}</td>
+                </tr>
+
+                <tr>
+                    <td>Genero Agenda</td>
+                    <td>:</td>
+                    <td></td>
                 </tr>
                 <tr>
-                    <td colspan="3"></td>
+                    <td colspan="3"><br></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><h3>MENSAJE DEL CONTACTO:</h3>
-                        <p>{{ $data['mensaje'] }}</p>
-                    </td>
+                    <td><strong>MENSAJE:</strong></td>
+                    <td>:</td>
+                    <td>{{ $data['mensaje'] }}</td>
                 </tr>
+
                 <br><br>
                 <tr>
                     <td bgcolor="#FFFFFF" style="padding: 20px 20px 30px 30px;" colspan="3">

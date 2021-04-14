@@ -29,6 +29,14 @@
                         <li><a href="/NuevoCliente"><i class="fa fa-user-plus"></i> Registrar Cliente</a></li>
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="#"><i class='fa fa-phone'></i> <span>Fonos / Anexos</span> <i
+                            class="fa fa-angle-down pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="/MantenedorFonos"><i class="fa fa-phone"></i> Mantenedor Fonos</a></li>
+                        <li><a href="/MantenedorAnexos"><i class="fa fa-phone-square"></i> Mantenedor Anexos</a></li>
+                    </ul>
+                </li>
             @endif
             @if(Auth::user()->estadous==1 || Auth::user()->estadous==4)
                 <li class="header">- GERENCIA GENERAL -</li>

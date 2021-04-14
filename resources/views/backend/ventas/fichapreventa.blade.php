@@ -177,12 +177,21 @@
                                 <input type="hidden" name="idprev" value="{{ $fic_prev->idpreventas }}">
                             </div>
                             <div class="box-footer">
+                                @if($fic_prev->estadopreve==1)
                                 <button type="submit" class="btn btn-success btn-xs pull-left"
-                                        id="btn_add_rl">
+                                        id="btn_add_rl" disabled>
                                     <i
                                         class="fa fa-save"></i>
                                     Confirmar Información y Convertir en Cliente
                                 </button>
+                                    @else
+                                    <button type="submit" class="btn btn-success btn-xs pull-left"
+                                            id="btn_add_rl">
+                                        <i
+                                            class="fa fa-save"></i>
+                                        Confirmar Información y Convertir en Cliente
+                                    </button>
+                                @endif
                             </div>
                         </form>
                         <form class="form-horizontal" method="post" action="/EliminarPreventa">

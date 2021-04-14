@@ -874,8 +874,6 @@ class VentasController extends Controller
             'vtcall_clientes_idclientes' => $id_cli,
         ]);
 
-        dd($id_cli);
-
         DB::table('vtcall_preventas')
             ->where('idpreventas', $request->idprev)
             ->update([

@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/fonoanexos/anexos.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/backend/fonoanexos/fonos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/ventas/fichapreventa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/ventas/fichapreventa.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/footer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +30,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="composer.json" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -149,6 +159,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -246,6 +257,10 @@
       <workItem from="1608132532831" duration="7000" />
       <workItem from="1608495801343" duration="15563000" />
       <workItem from="1608513154975" duration="390000" />
+      <workItem from="1617630193915" duration="2772000" />
+      <workItem from="1617823560513" duration="597000" />
+      <workItem from="1617897324540" duration="9441000" />
+      <workItem from="1618404327042" duration="3846000" />
     </task>
     <servers />
   </component>
@@ -253,43 +268,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="494" y="222" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607371479830">
-      <screen x="0" y="0" width="1536" height="834" />
+    <state x="2713" y="450" key="NewPhpFileDialog" timestamp="1617918765456">
+      <screen x="1920" y="0" width="1920" height="1050" />
     </state>
-    <state x="494" y="222" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1607371479830" />
-    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608508086212">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="499" y="174" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1608508086212" />
-    <state x="549" y="174" key="FileChooserDialogImpl" timestamp="1607472642513">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="-1234" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1607014974344" />
-    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606132646828" />
-    <state x="2606" y="219" key="FileChooserDialogImpl/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@1920.0.1920.1050" timestamp="1605616921881" />
-    <state x="549" y="174" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1607472642513" />
-    <state x="604" y="342" key="NewPhpFileDialog" timestamp="1608074372412">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@0.0.1536.834" timestamp="1606996425510" />
-    <state x="604" y="342" key="NewPhpFileDialog/0.0.1536.834@0.0.1536.834" timestamp="1608074372412" />
-    <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1605725282328">
-      <screen x="-1920" y="0" width="1920" height="1042" />
-    </state>
-    <state x="-1359" y="129" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/-1920.0.1920.1042/1920.0.1920.1050/0.0.1536.834@-1920.0.1920.1042" timestamp="1605725282328" />
-    <state x="-1159" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1607015675188">
-      <screen x="-1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="-1159" y="443" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1607015675188" />
-    <state x="-1059" y="240" key="run.anything.popup" timestamp="1606750787794">
-      <screen x="-1920" y="0" width="1920" height="1050" />
-    </state>
-    <state x="-1059" y="240" key="run.anything.popup/0.0.1536.834/-1920.0.1920.1050/1920.0.1920.1050@-1920.0.1920.1050" timestamp="1606750787794" />
-    <state x="689" y="191" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1604666570336" />
-    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1606787433381">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="695" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1606787433381" />
+    <state x="2713" y="450" key="NewPhpFileDialog/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1617918765456" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

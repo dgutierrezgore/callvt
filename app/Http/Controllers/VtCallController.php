@@ -909,4 +909,43 @@ class VtCallController extends Controller
 
     ///////////////////////////////////////////////////////////////////
 
+    public function mantenedor_fonos()
+    {
+
+        return view('backend.fonoanexos.fonos');
+    }
+
+
+    public function mantenedor_anexos()
+    {
+
+        $anexos_desocupados = DB::table('vtcall_anexo_disp')
+            ->where('estadoanex', 1)
+            ->get();
+
+        $anexos_ocupados = DB::table('vtcall_anexo_disp')
+            ->join('vtcall_clientes', 'vtcall_clientes.idclientes', 'vtcall_anexo_disp.vtcall_clientes_idclientes')
+            ->join('vtcall_folio_int', 'vtcall_folio_int.idfolioint', 'vtcall_clientes.fonoentra1')
+            ->where('estadoanex', 2)
+            ->get();
+
+        return view('backend.fonoanexos.anexos', [
+            'a_dis' => $anexos_desocupados,
+            'a_ocu' => $anexos_ocupados
+        ]);
+    }
+
+    public function crear_anexos(Request $request)
+    {
+
+        DB::table('vtcall_anexo_disp')->insert([
+            'anexdisp' => $request->num_an,
+            'estadoanex' => 1,
+            'vtcall_clientes_idclientes' => null
+        ]);
+
+        return back();
+
+    }
+
 }

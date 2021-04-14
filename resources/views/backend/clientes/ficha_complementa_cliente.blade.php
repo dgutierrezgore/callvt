@@ -651,7 +651,7 @@
                                                 <select class="form-control" name="fonoip1" id="fonoip1">
                                                     @foreach($folio_int as $listado)
                                                         <option
-                                                            value="{{ $listado->idfolioint }}">{{ $listado->numfolioint }}
+                                                            value="{{ $listado->numfolioint }}">{{ $listado->numfolioint }}
                                                             - {{ $listado->numexterno}}</option>
                                                     @endforeach
                                                 </select>

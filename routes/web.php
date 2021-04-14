@@ -52,8 +52,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/GenContrato', 'VentasController@generar_contrato');
     Route::post('/FichaPreventa', 'VentasController@ficha_preventa');
     Route::post('/ConfirmarDatosPreventa', 'VentasController@confirmar_datosprev');
-    Route::post('/VentaCliente','VentasController@confirmar_venta');
-    Route::post('/EliminarPreventa','VentasController@eliminar_venta');
+    Route::post('/VentaCliente', 'VentasController@confirmar_venta');
+    Route::post('/EliminarPreventa', 'VentasController@eliminar_venta');
 
     ///////////////
     ///
@@ -66,6 +66,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/RegistroLlamadas', 'VtCallController@registro_llamadas');
     Route::get('/ReporteDiario', 'VtCallController@reportes_diarios');
+
+
+    Route::get('/MantenedorFonos', 'VtCallController@mantenedor_fonos');
+    Route::post('/CreaFonoNuevo', 'VtCallController@crear_fonos');
+
+    Route::get('/MantenedorAnexos', 'VtCallController@mantenedor_anexos');
+    Route::post('/CreaAnexoNuevo', 'VtCallController@crear_anexos');
+
 
 ///////////////
 ///
