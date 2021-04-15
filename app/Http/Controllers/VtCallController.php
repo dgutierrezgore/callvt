@@ -912,9 +912,20 @@ class VtCallController extends Controller
     public function mantenedor_fonos()
     {
 
-        return view('backend.fonoanexos.fonos');
-    }
+        $fijos_desocupados = DB::table('vtcall_folio_int')
+            ->where('estadofolioint', 1)
+            ->get();
 
+        $fijos_ocupados = DB::table('vtcall_folio_int')
+            ->join('vtcall_clientes', 'vtcall_clientes.fonoentra1', 'vtcall_folio_int.numfolioint')
+            ->where('estadofolioint', 2)
+            ->get();
+
+        return view('backend.fonoanexos.fonos', [
+            'a_dis' => $fijos_desocupados,
+            'a_ocu' => $fijos_ocupados
+        ]);
+    }
 
     public function mantenedor_anexos()
     {

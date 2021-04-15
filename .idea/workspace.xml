@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a28e947b-4045-47b8-ab41-c0bb4a6605e7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/fonoanexos/anexos.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/fonoanexos/fonos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VentasController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/VtCallController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/clientes/ficha_complementa_cliente.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/fonoanexos/fonos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/fonoanexos/fonos.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/operacion/llamadaentrante.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/ventas/fichapreventa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/ventas/fichapreventa.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/correos/avisomensajeope.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/adminlte/layouts/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -260,7 +253,9 @@
       <workItem from="1617630193915" duration="2772000" />
       <workItem from="1617823560513" duration="597000" />
       <workItem from="1617897324540" duration="9441000" />
-      <workItem from="1618404327042" duration="3846000" />
+      <workItem from="1618404327042" duration="5694000" />
+      <workItem from="1618417464954" duration="17000" />
+      <workItem from="1618497271491" duration="6882000" />
     </task>
     <servers />
   </component>
@@ -268,6 +263,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2660" y="281" key="FileChooserDialogImpl" timestamp="1618417480274">
+      <screen x="1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="2660" y="281" key="FileChooserDialogImpl/0.0.1536.834/1920.0.1920.1050@1920.0.1920.1050" timestamp="1618417480274" />
     <state x="2713" y="450" key="NewPhpFileDialog" timestamp="1617918765456">
       <screen x="1920" y="0" width="1920" height="1050" />
     </state>

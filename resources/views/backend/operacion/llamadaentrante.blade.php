@@ -73,6 +73,9 @@
                                 <div id="contacto3">
 
                                 </div>
+                                <div id="agenda">
+
+                                </div>
                             </div>
                             <div class="col-sm-6">
                                 <form class="form-horizontal" name="form1" id="form_llamada">
@@ -98,7 +101,7 @@
                                 </form>
                                 <hr>
 
-                                <div id="formaddllamada">
+                                <div id="formaddllamada" style="display: none;">
                                     <form class="form-horizontal" name="form1" id="form_datos_llamada">
                                         <div class="box-body">
                                             <div id="alerta_tab2">
@@ -141,7 +144,7 @@
                                                 <label for="inputEmail3" class="col-sm-3 control-label">Recado:</label>
                                                 <div class="col-sm-8">
                                                     <textarea class="form-control" id="motiex" name="motiex" rows="2"
-                                                              style="text-transform:uppercase;"  required></textarea>
+                                                              style="text-transform:uppercase;" required></textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -239,7 +242,7 @@
                                  alt="User Image"></center>
 
                     <hr>
-                    <center><h4>Daniel E. Gutiérrez Fariña</h4></center>
+                    <center><h4>{{Auth::user()->name}}</h4></center>
                 </div>
                 <!-- /.box-body -->
             </div>
@@ -287,6 +290,7 @@
                                     "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
                                     "No Encontrado\n" +
                                     "</div>").show();
+                                $('#formaddllamada').hide();
                                 $('#contestacion').hide();
                                 $('#infoextra').hide();
                                 $('#contacto').hide();
@@ -318,7 +322,7 @@
                                 $("#encontrado").val(1);
                                 $('#contestacion').html("" +
                                     "<div class=\"alert alert-success\">\n" +
-                                    "<h4><i class=\"icon fa fa-bullhorn\"></i> Contestación!</h4>" +
+                                    "<h4><i class=\"icon fa fa-bullhorn\"></i> Forma Contestación</h4>" +
                                     llamada +
                                     "</div>").show();
 
@@ -335,6 +339,7 @@
                                     contactos1 + "<br>" + contactos1b +
                                     "</div>"
                                 ).show();
+                                //AQUI VA LA AGENDA
                                 if (data[0].contactosac <= 3) {
                                     $('#contacto2').html("" +
                                         "<div class=\"alert alert-success\">\n" +
@@ -347,6 +352,7 @@
                                         contactos3 + "<br>" + contactos3b +
                                         "</div>").show();
                                 }
+
                             }
                         },
                         error: function (data) {
@@ -386,6 +392,7 @@
                                         "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
                                         "No Encontrado en BD, se debe agregar ahora\n" +
                                         "</div>").show();
+                                    $('#formaddllamada').show();
                                     $("#nombreex").val('');
                                     $("#empresaex").val('');
                                     $("#fonsecex").val('');
@@ -408,6 +415,7 @@
                                         "Encontrado en BD, puede actualizar campos\n" +
                                         "</div>").show();
                                     $('#btn_dos').show();
+                                    $('#formaddllamada').show();
                                     $("#hiddenfonox").val($("#fonoex").val());
                                     $("#hiddenfonocli").val($("#fonoip").val());
 
@@ -460,6 +468,7 @@
                                 "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
                                 "No Encontrado\n" +
                                 "</div>").show();
+                            $('#formaddllamada').hide();
                             $('#contestacion').hide();
                             $('#infoextra').hide();
                             $('#contacto').hide();
@@ -471,7 +480,6 @@
                         } else {
                             llamada = data[0].fomcontllamada;
                             infoextra = data[0].infoextra;
-
 
                             contactos1 = data[0].nombrescont + ' ' + data[0].paternocont + ' ' + data[0].maternocont;
                             contactos1b = data[0].celcont + ' ' + data[0].mailcont;
@@ -520,6 +528,10 @@
                                     contactos3 + "<br>" + contactos3b +
                                     "</div>").show();
                             }
+                            $('#agenda').html("" +
+                                "<div class=\"alert alert-success\">\n" +
+                                "<h4><i class=\"icon fa fa-spinner\"></i> Agenda!</h4>" +
+                                "</div>").show();
                         }
                     },
                     error: function (data) {
@@ -557,6 +569,7 @@
                                     "<h4><i class=\"icon fa fa-warning\"></i> Alerta de Sistema!</h4>" +
                                     "No Encontrado en BD, se debe agregar ahora\n" +
                                     "</div>").show();
+                                $('#formaddllamada').show();
                                 $("#nombreex").val('');
                                 $("#empresaex").val('');
                                 $("#fonsecex").val('');
@@ -578,6 +591,7 @@
                                     "<h4><i class=\"icon fa fa-warning\"></i> Mensaje de Sistema!</h4>" +
                                     "Encontrado en BD, puede actualizar campos\n" +
                                     "</div>").show();
+                                $('#formaddllamada').show();
                                 $('#btn_dos').show();
                                 $("#hiddenfonox").val($("#fonoex").val());
                                 $("#hiddenfonocli").val($("#fonoip").val());

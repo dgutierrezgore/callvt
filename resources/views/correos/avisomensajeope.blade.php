@@ -112,7 +112,7 @@
                 </tr>
 
                 <tr>
-                    <td>Genero Agenda</td>
+                    <td>Generó Agenda</td>
                     <td>:</td>
                     <td></td>
                 </tr>
