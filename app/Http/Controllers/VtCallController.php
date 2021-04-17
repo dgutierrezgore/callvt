@@ -500,6 +500,46 @@ class VtCallController extends Controller
 
     }
 
+    public function modifica_cliente()
+    {
+
+        $clientes = DB::table('vtcall_clientes')
+            ->join('vtcall_rep_legal', 'vtcall_rep_legal.vtcall_clientes_idclientes', 'vtcall_clientes.idclientes')
+            ->get();
+
+        return view('backend.clientes.grilla_mod_cliente', [
+            'clientes' => $clientes
+        ]);
+
+    }
+
+    public function modificar_datos_cliente(Request $request)
+    {
+
+        $cliente = DB::table('vtcall_clientes')
+            ->where('idclientes', $request->idcli)
+            ->first();
+
+        $rep_legales = DB::table('vtcall_rep_legal')
+            ->where('vtcall_clientes_idclientes', $request->idcli)
+            ->get();
+
+        $contactos = DB::table('vtcall_contactos')
+            ->where('vtcall_clientes_idclientes', $request->idcli)
+            ->get();
+
+        //$num_entrante = DB::table('')->get();
+
+        //$anexos = DB::table('')->get();
+
+        return view('backend.clientes.form_mod_cliente', [
+            'cliente' => $cliente,
+            'rl' => $rep_legales,
+            'cont' => $contactos
+        ]);
+
+    }
+
     public function complementa_registrar_cliente(Request $request)
     {
 

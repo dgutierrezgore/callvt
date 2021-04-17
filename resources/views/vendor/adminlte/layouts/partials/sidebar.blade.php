@@ -27,6 +27,7 @@
                             class="fa fa-angle-down pull-right"></i></a>
                     <ul class="treeview-menu">
                         <li><a href="/NuevoCliente"><i class="fa fa-user-plus"></i> Registrar Cliente</a></li>
+                        <li><a href="/ModificarCliente"><i class="fa fa-edit"></i> Modificar Cliente</a></li>
                     </ul>
                 </li>
                 <li class="treeview">

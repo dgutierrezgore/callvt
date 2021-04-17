@@ -293,6 +293,7 @@
                                 $('#formaddllamada').hide();
                                 $('#contestacion').hide();
                                 $('#infoextra').hide();
+                                $('#agenda').hide();
                                 $('#contacto').hide();
                                 $('#contacto2').hide();
                                 $('#contacto3').hide();
@@ -339,7 +340,11 @@
                                     contactos1 + "<br>" + contactos1b +
                                     "</div>"
                                 ).show();
-                                //AQUI VA LA AGENDA
+                                $('#agenda').html("" +
+                                    "<div class=\"alert alert-success\">\n" +
+                                    "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL" +
+                                    "</div>"
+                                ).show();
                                 if (data[0].contactosac <= 3) {
                                     $('#contacto2').html("" +
                                         "<div class=\"alert alert-success\">\n" +
@@ -471,6 +476,7 @@
                             $('#formaddllamada').hide();
                             $('#contestacion').hide();
                             $('#infoextra').hide();
+                            $('#agenda').hide();
                             $('#contacto').hide();
                             $('#contacto2').hide();
                             $('#contacto3').hide();
@@ -514,6 +520,11 @@
                                 "<h4><i class=\"icon fa fa-user\"></i> Contacto 1! Anexo: " + data[0].anex1cont
                                 + "</h4>" +
                                 contactos1 + "<br>" + contactos1b +
+                                "</div>"
+                            ).show();
+                            $('#agenda').html("" +
+                                "<div class=\"alert alert-success\">\n" +
+                                "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL" +
                                 "</div>"
                             ).show();
                             if (data[0].contactosac <= 3) {

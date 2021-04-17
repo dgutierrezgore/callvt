@@ -81,6 +81,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/NuevoCliente', 'VtCallController@nuevo_cliente'); // Formulario Nuevo Cliente
     Route::post('/RegistrarCliente', 'VtCallController@registrar_cliente'); // Registra Nuevo Cliente
+    Route::get('/ModificarCliente', 'VtCallController@modifica_cliente');
+    Route::post('/ModificarDatosCliente', 'VtCallController@modificar_datos_cliente');
+
     Route::post('/ComplementarCliente', 'VtCallController@complementa_registrar_cliente'); // Formulario Complementa Nuevo Cliente
     Route::post('/AddRepresentantesLegales', 'VtCallController@registra_rl_cliente'); // Registra Representantes Legales
     Route::post('/AddPlanIni', 'VtCallController@registra_plan_inicial'); // Registra Plan Inicial
