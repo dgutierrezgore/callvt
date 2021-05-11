@@ -340,11 +340,16 @@
                                     contactos1 + "<br>" + contactos1b +
                                     "</div>"
                                 ).show();
-                                $('#agenda').html("" +
-                                    "<div class=\"alert alert-success\">\n" +
-                                    "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL" +
-                                    "</div>"
-                                ).show();
+                                if (data[0].urlagenda != null) {
+                                    $('#agenda').html("" +
+                                        "<div class=\"alert alert-success\">\n" +
+                                        "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL:</h4>" +
+                                        "<a style='display:inline-block;padding:6px 12px;margin-bottom:0;font-size:10px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;background-image:none;border:1px solid transparent;border-radius:4px;text-decoration:none;color:#fff;background-color:#337ab7;border-color:#2e6da4' target='_blank' href='http://agenda.virtualcall.cl/Agenda/Publico/" + data[0].urlagenda + "'>Acceso para Agendar Hora Profesional</a>" +
+                                        "</div>"
+                                    ).show();
+                                } else {
+                                    $('#agenda').hide();
+                                }
                                 if (data[0].contactosac <= 3) {
                                     $('#contacto2').html("" +
                                         "<div class=\"alert alert-success\">\n" +
@@ -522,11 +527,16 @@
                                 contactos1 + "<br>" + contactos1b +
                                 "</div>"
                             ).show();
-                            $('#agenda').html("" +
-                                "<div class=\"alert alert-success\">\n" +
-                                "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL" +
-                                "</div>"
-                            ).show();
+                            if (data[0].urlagenda != null) {
+                                $('#agenda').html("" +
+                                    "<div class=\"alert alert-success\">\n" +
+                                    "<h4><i class=\"icon fa fa-calendar\"></i> Agenda URL:</h4>" +
+                                    "<a style='display:inline-block;padding:6px 12px;margin-bottom:0;font-size:10px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;background-image:none;border:1px solid transparent;border-radius:4px;text-decoration:none;color:#fff;background-color:#337ab7;border-color:#2e6da4' target='_blank' href='http://agenda.virtualcall.cl/Agenda/Publico/" + data[0].urlagenda + "'>Acceso para Agendar Hora Profesional</a>" +
+                                    "</div>"
+                                ).show();
+                            } else {
+                                $('#agenda').hide();
+                            }
                             if (data[0].contactosac <= 3) {
                                 $('#contacto2').html("" +
                                     "<div class=\"alert alert-success\">\n" +
